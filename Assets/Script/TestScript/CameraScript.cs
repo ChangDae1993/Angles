@@ -6,7 +6,7 @@ public class CameraScript : MonoBehaviour
 {
     public GameObject playerTarget;
     public Vector3 followPos;
-    public float camSize = 5f;
+    public float camSize;
     // Start is called before the first frame update
     void Start()
     {

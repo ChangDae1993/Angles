@@ -14,14 +14,24 @@ public class CameraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    followPos = new Vector3(playerTarget.transform.position.x, 
+    //        playerTarget.transform.position.y,
+    //        -30f);
+
+    //    Camera.main.orthographicSize = camSize;
+
+    //    this.transform.position = followPos;
+    //}
+
+    private void FixedUpdate()
     {
-        followPos = new Vector3(playerTarget.transform.position.x, 
+        followPos = new Vector3(playerTarget.transform.position.x,
             playerTarget.transform.position.y,
             -30f);
 
         Camera.main.orthographicSize = camSize;
-
         this.transform.position = followPos;
     }
 }

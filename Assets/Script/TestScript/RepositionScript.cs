@@ -71,6 +71,14 @@ public class RepositionScript : MonoBehaviour
                 break;
             case "Item":
                 //아이템 생길 시 위치 일정 수준 지나면 옮겨 주기
+                //아이템 스크립트의 type별로 다르게 적용
+                //if(this.TryGetComponent(out /*아이템스크립트*/ type))
+                //{
+                //    switch()
+                //        case "":
+                //        break;
+                //}
+
                 break;
             default:
                 break;

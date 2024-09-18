@@ -47,8 +47,10 @@ public class RepositionScript : MonoBehaviour
                     this.transform.Translate(playerDir * 20 + new Vector3(Random.Range(-3f,3f),Random.Range(-3f,3f), 0f));
                 }
                 break;
+            case "Item":
+                //아이템 생길 시 위치 일정 수준 지나면 옮겨 주기
+                break;
             default:
-
                 break;
         }
     }

@@ -26,8 +26,30 @@ public class RepositionScript : MonoBehaviour
         float diffY = Mathf.Abs(playerPos.y - myPos.y);
 
         Vector3 playerDir = GameManager.GM.player.inputVec;
-        float dirX = playerDir.x < 0 ? -1 : 1;
-        float dirY = playerDir.y < 0 ? -1 : 1;
+
+        //float dirX = playerDir.x < 0 ? -1 : 1;
+        //float dirY = playerDir.y < 0 ? -1 : 1;
+
+        float dirX = 0f;
+        float dirY = 0f;
+
+        if(playerDir.x < 0)
+        {
+            dirX = -1f;
+        }
+        else
+        {
+            dirX = 1f;
+        }
+
+        if (playerDir.y < 0)
+        {
+            dirY = -1f;
+        }
+        else
+        {
+            dirY = 1f;
+        }
 
         switch (this.transform.tag)
         {

@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         Vector2 nextVec = targerDIr.normalized * speed * Time.fixedDeltaTime;
 
         rigid.MovePosition(rigid.position + nextVec);
-        rigid.velocity = Vector2.zero;
+        rigid.linearVelocity = Vector2.zero;
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     //    if (!islive)
     //        return;
 
-    //    //ÀÛÀ¸¸é false, Å©¸é true
+    //    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ false, Å©ï¿½ï¿½ true
     //    spriteRen.flipX = target.position.x < rigid.position.x;
     //}
 

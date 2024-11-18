@@ -1,9 +1,8 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
-
-    public int indexSelector = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,15 +16,4 @@ public class UIManager : MonoBehaviour
         
     }
 
-    #region 버튼 공통 연출
-    public void ButtonPointerIn()
-    {
-        Debug.Log("button on");
-    }
-
-    public void ButtonPointerOut()
-    {
-        Debug.Log("button off");
-    }
-    #endregion
 }

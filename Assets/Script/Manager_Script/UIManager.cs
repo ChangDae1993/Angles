@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
         
     }
 
+    #region 버튼 공통 연출
     public void ButtonPointerIn()
     {
         Debug.Log("button on");
@@ -26,4 +27,5 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("button off");
     }
+    #endregion
 }

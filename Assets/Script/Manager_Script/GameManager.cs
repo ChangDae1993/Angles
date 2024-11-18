@@ -37,11 +37,11 @@ public class GameManager : MonoBehaviour
 
 
 
-#if UNITY_EDITOR
-        Cursor.visible = true;
-#else
-        Cursor.visible = false;
-#endif
+//#if UNITY_EDITOR
+//        Cursor.visible = true;
+//#else
+//        Cursor.visible = false;
+//#endif
 
     }
 

@@ -20,6 +20,7 @@ public class SceneChangeManager : MonoBehaviour
         {
             sceneChng = StartCoroutine(changeSceneFadeInCO());
         }
+
     }
 
     // Update is called once per frame
@@ -51,6 +52,7 @@ public class SceneChangeManager : MonoBehaviour
         sceneChngPanel.color = new Color(0f, 0f, 0f, 1f);
     }
 
+    public bool newGameStart = false;
     public void ChangeScene(int SceneIndex)
     {
         sceneChngPanel.color = new Color(0f, 0f, 0f, 1f);
@@ -70,7 +72,7 @@ public class SceneChangeManager : MonoBehaviour
 
     public void ToIntroScene()
     {
-        //sceneChng = StartCoroutine(changeSceneFadeOutCO());
+        newGameStart = true;
         sceneChngPanel.color = new Color(0f, 0f, 0f, 1f);
         GameManager.GM.UM.stgCNt = UIManager.stagecount.IntroScene;
         GameManager.GM.UM.BtnGroup.gameObject.SetActive(false);

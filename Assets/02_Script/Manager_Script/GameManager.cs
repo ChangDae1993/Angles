@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     [Header("UI Manager")]
     public UIManager UM;
     [Space(10f)]
-    public Player_Move player;
+    public GameObject player;
 
     public SceneChangeManager SCM;
+    public GamePlayManager GPM;
 
 
     private void Awake()
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
 
         UM = this.transform.Find("UIManager").GetComponent<UIManager>();
         SCM = this.transform.Find("SceneManager").GetComponent<SceneChangeManager>();
+        GPM = this.transform.Find("GamePlayManager").GetComponent<GamePlayManager>();
 
 
 //#if UNITY_EDITOR

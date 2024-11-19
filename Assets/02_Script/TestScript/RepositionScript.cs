@@ -5,10 +5,15 @@ using UnityEngine;
 public class RepositionScript : MonoBehaviour
 {
     Collider2D col;
-
+    public Player_Move p_move;
     private void Awake()
     {
         col = GetComponent<Collider2D>();
+    }
+
+    private void Start()
+    {
+        p_move = GameManager.GM.player.GetComponent<Player_Move>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -25,7 +30,7 @@ public class RepositionScript : MonoBehaviour
         float diffX = Mathf.Abs(playerPos.x - myPos.x);
         float diffY = Mathf.Abs(playerPos.y - myPos.y);
 
-        Vector3 playerDir = GameManager.GM.player.inputVec;
+        Vector3 playerDir = p_move.inputVec;
 
         //float dirX = playerDir.x < 0 ? -1 : 1;
         //float dirY = playerDir.y < 0 ? -1 : 1;

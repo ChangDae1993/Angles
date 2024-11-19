@@ -20,13 +20,13 @@ public class ButtonAnimation : MonoBehaviour
     public void ButtonPointerIn()
     {
         btnColor.color = Color.red;
-        Debug.Log("button on");
+        //Debug.Log("button on");
     }
 
     public void ButtonPointerOut()
     {
         btnColor.color = Color.white;
-        Debug.Log("button off");
+        //Debug.Log("button off");
     }
     #endregion
 }

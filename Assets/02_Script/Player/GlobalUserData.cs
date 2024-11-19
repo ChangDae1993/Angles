@@ -5,7 +5,8 @@ public class GlobalUserData : MonoBehaviour
     public static float playerExp;
 
     public static int stage_Progress = 0;
-
+    //레벨
+    public static int p_Level = 0;
     //체력
     public static float p_HP;
     //체력 회복률

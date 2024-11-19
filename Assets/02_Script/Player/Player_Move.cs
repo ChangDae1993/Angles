@@ -10,10 +10,6 @@ public class Player_Move : MonoBehaviour
 
     private void Awake()
     {
-        if(GameManager.GM.player == null)
-        {
-            GameManager.GM.player = this;
-        }
 
         rigid = this.GetComponent<Rigidbody2D>();
     }

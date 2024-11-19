@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player_Move : MonoBehaviour
 {
     public Vector2 inputVec = Vector2.zero;
 
     public Rigidbody2D rigid;
-
-    public float moveSpeed;
 
     private void Awake()
     {
@@ -35,7 +33,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 nextVec = inputVec.normalized * moveSpeed * Time.fixedDeltaTime;
+        Vector2 nextVec = inputVec.normalized * GlobalUserData.p_moveSpeed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
     }
 }

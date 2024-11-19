@@ -4,36 +4,42 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool testMode;
+
     public static GameManager GM;
     [Header("UI Manager")]
     public UIManager UM;
     [Space(10f)]
-    public Player player;
+    public Player_Move player;
 
     public SceneChangeManager SCM;
 
 
     private void Awake()
     {
-        GM = this;
-
-        //Debug.Log("Awake");
-        if (GM == null)
+        if(!testMode)
         {
-            Debug.Log("start");
-            DontDestroyOnLoad(this.gameObject);
-
             GM = this;
-        }
-        else if (GM != this)
-        {
-            Debug.Log("start2");
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("start3");
-            DontDestroyOnLoad(gameObject);
+
+            //Debug.Log("Awake");
+            if (GM == null)
+            {
+                Debug.Log("start");
+                DontDestroyOnLoad(this.gameObject);
+
+                GM = this;
+            }
+            else if (GM != this)
+            {
+                Debug.Log("start2");
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("start3");
+                DontDestroyOnLoad(gameObject);
+            }
+
         }
 
         UM = this.transform.Find("UIManager").GetComponent<UIManager>();

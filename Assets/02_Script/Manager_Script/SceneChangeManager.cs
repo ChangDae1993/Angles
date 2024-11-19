@@ -8,6 +8,8 @@ public class SceneChangeManager : MonoBehaviour
     public Image sceneChngPanel;
 
     Coroutine sceneChng;
+
+    public bool newGameStart = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,6 +39,14 @@ public class SceneChangeManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
+        if (GameManager.GM.UM.stgCNt > (UIManager.stagecount)1)
+        {
+            if (newGameStart)
+            {
+                GameManager.GM.player.GetComponent<Player_State>().LevelUp();
+            }
+        }
+
         sceneChngPanel.color = new Color(0f, 0f, 0f, 0f);
     }
 
@@ -52,7 +62,6 @@ public class SceneChangeManager : MonoBehaviour
         sceneChngPanel.color = new Color(0f, 0f, 0f, 1f);
     }
 
-    public bool newGameStart = false;
     public void ChangeScene(int SceneIndex)
     {
         sceneChngPanel.color = new Color(0f, 0f, 0f, 1f);

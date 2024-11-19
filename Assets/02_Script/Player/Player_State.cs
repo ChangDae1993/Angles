@@ -3,7 +3,9 @@ using UnityEngine.UI;
 
 public class Player_State : MonoBehaviour
 {
-    public bool levelUp;    
+    public bool levelUp;
+
+    public Image levelUpPanel;
     public void Awake()
     {
         if (GameManager.GM.player == null)
@@ -25,8 +27,17 @@ public class Player_State : MonoBehaviour
     }
     public void LevelUp()
     {
+        levelUpPanel.gameObject.SetActive(true);
         Debug.Log("level up");
+        Time.timeScale = 0f;
         levelUp = true;
+    }
+
+    public void LevelUpSelect()
+    {
+        levelUpPanel.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        levelUp = false;
     }
 
     public void Die()

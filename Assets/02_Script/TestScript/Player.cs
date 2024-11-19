@@ -12,8 +12,14 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        if(GameManager.GM.player == null)
+        {
+            GameManager.GM.player = this;
+        }
+
         rigid = this.GetComponent<Rigidbody2D>();
     }
+
     // Start is called before the first frame update
     void Start()
     {

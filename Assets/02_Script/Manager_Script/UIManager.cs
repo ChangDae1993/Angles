@@ -3,7 +3,17 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
+    public enum stagecount
+    {
+        MainScene = 0,
+        IntroScene = 1,
+        PlayScene = 2,
+    }
 
+    public stagecount stgCNt;
+
+    [Header("Main Scene")]
+    public GameObject BtnGroup;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +24,11 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
 }

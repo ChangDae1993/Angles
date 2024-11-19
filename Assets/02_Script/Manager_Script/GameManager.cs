@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour
     [Space(10f)]
     public Player player;
 
+    public SceneChangeManager SCM;
+
 
     private void Awake()
     {
         GM = this;
-        Debug.Log("Awake");
+
+        //Debug.Log("Awake");
         if (GM == null)
         {
             Debug.Log("start");
@@ -34,7 +37,7 @@ public class GameManager : MonoBehaviour
         }
 
         UM = this.transform.Find("UIManager").GetComponent<UIManager>();
-
+        SCM = this.transform.Find("SceneManager").GetComponent<SceneChangeManager>();
 
 
 //#if UNITY_EDITOR

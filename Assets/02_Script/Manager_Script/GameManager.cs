@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("start3");
+                //Debug.Log("start3");
                 DontDestroyOnLoad(gameObject);
             }
 

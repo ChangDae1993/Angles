@@ -28,21 +28,10 @@ public class GlobalItemData : MonoBehaviour
 
     public void Awake()
     {
-        itemData.Add(i_basic, i_basic_Lv);
-        itemData.Add(i_holyarea, i_holyarea_Lv);
-        itemData.Add(i_satellite, i_satellite_Lv);
+        //itemData.Add(i_basic, i_basic_Lv);
+        //itemData.Add(i_holyarea, i_holyarea_Lv);
+        //itemData.Add(i_satellite, i_satellite_Lv);
         itemData.Add(i_lightball, i_lightball_Lv);        
-        itemData.Add(i_flame, i_flame_Lv);
+        //itemData.Add(i_flame, i_flame_Lv);
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    //public void Start()
-    //{
-    //}
-
-    // Update is called once per frame
-    //public void Update()
-    //{
-        
-    //}
 }

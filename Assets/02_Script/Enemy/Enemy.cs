@@ -65,19 +65,25 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (!collision.CompareTag("Weapon"))
+            return;
+
+        Hp -= collision.GetComponent<Weapon>().damage;
+
+        if(Hp > 0)
+        {
+
+        }
+        else
+        {
+            Dead();
+            Hp = maxHP;
+        }
     }
 
-    #region spriteFLip
-
-    //private void LateUpdate()
-    //{
-    //    if (!islive)
-    //        return;
-
-    //    //������ false, ũ�� true
-    //    spriteRen.flipX = target.position.x < rigid.position.x;
-    //}
-
-    #endregion
+    public void Dead()
+    {
+        islive = false;
+        gameObject.SetActive(false);
+    }
 }

@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,7 +35,7 @@ public class Player_State : MonoBehaviour
     public void LevelUp()
     {
         levelUpPanel.gameObject.SetActive(true);
-        Debug.Log("level up");
+        //Debug.Log("level up");
         Time.timeScale = 0f;
         levelUp = true;
     }
@@ -48,12 +49,29 @@ public class Player_State : MonoBehaviour
                 GlobalItemData.itemData[selectItem.text]++;
             }
         }
-        Debug.Log(selectItem.text);
-        Debug.Log(GlobalItemData.itemData[selectItem.text]);
+        Debug.Log(selectItem.text + " : " + GlobalItemData.itemData[selectItem.text]);
         //Debug.Log("select");
+
+        if(ResourceInCheck(selectItem.text))
+        {
+            GameObject prefab = Resources.Load<GameObject>(selectItem.text);
+
+            // 2. 인스턴스화하여 씬에 배치
+            GameObject instance = Instantiate(prefab);
+            instance.name = prefab.name;
+            instance.transform.SetParent(this.transform);
+        }
+        
+
         levelUpPanel.gameObject.SetActive(false);
         Time.timeScale = 1f;
         levelUp = false;
+    }
+
+    public bool ResourceInCheck(string objectName)
+    {
+        Object resource = Resources.Load(objectName);
+        return resource != null;
     }
 
     public void Die()

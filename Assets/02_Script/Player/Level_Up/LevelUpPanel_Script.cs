@@ -9,18 +9,18 @@ public class LevelUpPanel_Script : MonoBehaviour
     public Button randomItem_1;
     public TextMeshProUGUI randomItem_1_txt;
     public TextMeshProUGUI randomItem_1_lv_txt;
-    [Space(10f)]
-    public Button randomItem_2;
-    public TextMeshProUGUI randomItem_2_txt;
-    public TextMeshProUGUI randomItem_2_lv_txt;
-    [Space(10f)]
-    public Button randomItem_3;
-    public TextMeshProUGUI randomItem_3_txt;
-    public TextMeshProUGUI randomItem_3_lv_txt;
-    [Space(10f)]
-    public Button randomItem_4;
-    public TextMeshProUGUI randomItem_4_txt;
-    public TextMeshProUGUI randomItem_4_lv_txt;
+    //[Space(10f)]
+    //public Button randomItem_2;
+    //public TextMeshProUGUI randomItem_2_txt;
+    //public TextMeshProUGUI randomItem_2_lv_txt;
+    //[Space(10f)]
+    //public Button randomItem_3;
+    //public TextMeshProUGUI randomItem_3_txt;
+    //public TextMeshProUGUI randomItem_3_lv_txt;
+    //[Space(10f)]
+    //public Button randomItem_4;
+    //public TextMeshProUGUI randomItem_4_txt;
+    //public TextMeshProUGUI randomItem_4_lv_txt;
 
     List<string> randomitems = new List<string>(GlobalItemData.itemData.Keys);
     List<int> randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
@@ -34,9 +34,9 @@ public class LevelUpPanel_Script : MonoBehaviour
         //randomItem_4_txt.text = GetRandomItem();
 
         GEtRandomItem(randomItem_1_txt, randomItem_1_lv_txt);
-        GEtRandomItem(randomItem_2_txt, randomItem_2_lv_txt);
-        GEtRandomItem(randomItem_3_txt, randomItem_3_lv_txt);
-        GEtRandomItem(randomItem_4_txt, randomItem_4_lv_txt);
+        //GEtRandomItem(randomItem_2_txt, randomItem_2_lv_txt);
+        //GEtRandomItem(randomItem_3_txt, randomItem_3_lv_txt);
+        //GEtRandomItem(randomItem_4_txt, randomItem_4_lv_txt);
     }
 
     private void OnDisable()
@@ -61,10 +61,10 @@ public class LevelUpPanel_Script : MonoBehaviour
     //}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    //void Start()
+    //{
         
-    }
+    //}
 
     //// Update is called once per frame
     //void Update()

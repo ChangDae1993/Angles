@@ -68,6 +68,21 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void OptionResumeBtn()
+    {
+        gamePause = false;
+        OptionShow(false);
+        Time.timeScale = 1f;
+        windowOnOff = false;
+    }
+    public SceneChangeManager scm;
+    //public void BackToMenuBtn()
+    //{
+    //    OptionShow(false);
+    //    GlobalItemData.itemData.Clear();
+    //    scm.ChangeScene(0);
+    //}
+
     public void ExitGame()
     {
         Application.Quit();

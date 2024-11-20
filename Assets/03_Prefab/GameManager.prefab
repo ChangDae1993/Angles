@@ -51,6 +51,7 @@ MonoBehaviour:
   windowOnOff: 0
   optionPanel: {fileID: 3972890458963726968}
   gamePause: 0
+  scm: {fileID: 915566392980706254}
 --- !u!1 &476743937104733104
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +732,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2900434486643824771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 915566392980706254}
+        m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4290296565213129731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,7 +1764,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3008590888686385787}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6393505429008628269}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OptionResumeBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5858452023168095781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,8 +2437,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 572902221126736829}
   - {fileID: 4893114408781147567}
+  - {fileID: 572902221126736829}
   - {fileID: 5761116666750316559}
   m_Father: {fileID: 2153345728836017085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

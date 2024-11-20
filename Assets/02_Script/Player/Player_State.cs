@@ -60,6 +60,7 @@ public class Player_State : MonoBehaviour
             GameObject instance = Instantiate(prefab);
             instance.name = prefab.name;
             instance.transform.SetParent(this.transform);
+            instance.transform.localScale = Vector3.one;
         }
         
 

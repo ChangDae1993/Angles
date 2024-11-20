@@ -28,10 +28,10 @@ public class CameraScript : MonoBehaviour
     private void FixedUpdate()
     {
         followPos = new Vector3(playerTarget.transform.position.x,
-            playerTarget.transform.position.y,
-            -30f);
+            playerTarget.transform.position.y, -8f
+            /*-30f*/);
 
-        Camera.main.orthographicSize = camSize;
+        //Camera.main.orthographicSize = camSize;
         this.transform.position = followPos;
     }
 }

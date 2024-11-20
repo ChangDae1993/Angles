@@ -29,7 +29,7 @@ public class Player_Move : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 nextVec = inputVec.normalized * GlobalUserData.p_moveSpeed * Time.fixedDeltaTime;
+        Vector2 nextVec = inputVec.normalized * GlobalUserData.p_MoveSpeed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
     }
 }

@@ -8,8 +8,40 @@ using UnityEngine.UI;
 
 public class Player_State : MonoBehaviour
 {
-    public bool levelUp;
+    [Header("Stat")]
+    //최대 체력
+    public float MaxHP;
+    //체력
+    public float HP;
+    //체력 재생
+    public float HP_Gen;
+    //레벨
+    public int Level;
+    //필요 경험치
+    public float EXP;
+    //받는 피해량
+    public float Shield;
+    //회피율
+    public float Dodge;
+    //이동속도
+    public  float MoveSpeed;
+    //공격력
+    public  float Attack;
+    //치명타율
+    public float CriticalRate;
+    //치명타 배율
+    public float CriticalDmg;
+    //마법 쿨타임
+    public float FireRate;
+    //축복 획득량
+    public float ExpAdd;
+    //생명 구슬 회복량
+    public float HealAmount;
+    //아이템 획득 반경
+    public float ItemGainRange;
 
+    [Header("Level Up")]
+    public bool levelUp;
     public Image levelUpPanel;
 
     [Space(10f)]
@@ -18,10 +50,31 @@ public class Player_State : MonoBehaviour
 
     public void Awake()
     {
+        Debug.Log("player Start");
         if (GameManager.GM.player == null)
         {
             GameManager.GM.player = this.gameObject;
         }
+        Init();
+    }
+
+    public void Init()
+    {
+        MaxHP += GlobalUserData.p_HP;
+        HP += MaxHP;
+        HP_Gen += GlobalUserData.p_HPGen;
+        Level += 0;
+        EXP = 0;
+        Shield += GlobalUserData.p_Shield;
+        Dodge += GlobalUserData.p_Dodge;
+        MoveSpeed += GlobalUserData.p_MoveSpeed;
+        Attack += GlobalUserData.p_Attack;
+        CriticalRate += GlobalUserData.p_CriticalRate;
+        CriticalDmg += GlobalUserData.p_CriticalDmg;
+        FireRate += GlobalUserData.p_FireRate;
+        ExpAdd += GlobalUserData.p_ExpAdd;
+        HealAmount += GlobalUserData.p_HealAmount;
+        ItemGainRange += GlobalUserData.p_ItemGainRange;
     }
 
 

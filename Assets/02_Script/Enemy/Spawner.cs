@@ -58,4 +58,7 @@ public class SpawnData
 
     //속도
     public  float e_Speed;
+
+    //경험치
+    public float e_Exp;
 }

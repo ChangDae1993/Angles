@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float Speed = 0f;
     public float Hp = 0f;
     public float maxHP = 0f;
+    public float Exp = 0f;
     public Sprite[] sprites;
 
 
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
         Speed = data.e_Speed;
         maxHP = data.e_Hp;
         Hp = data.e_Hp;
+        Exp = data.e_Exp;
     }
 
     // Start is called before the first frame update
@@ -83,6 +85,7 @@ public class Enemy : MonoBehaviour
 
     public void Dead()
     {
+
         islive = false;
         gameObject.SetActive(false);
     }

@@ -763,14 +763,21 @@ MonoBehaviour:
   spawnTimer: 0
   stage_level: 0
   spawnData:
-  - e_SpawnTime: 1.5
+  - e_SpawnTime: 2
     e_Type: 0
     e_Hp: 10
     e_Speed: 1.5
-  - e_SpawnTime: 1
+    e_Exp: 0.5
+  - e_SpawnTime: 1.5
     e_Type: 1
     e_Hp: 15
-    e_Speed: 2.4
+    e_Speed: 1.8
+    e_Exp: 1
+  - e_SpawnTime: 0.5
+    e_Type: 2
+    e_Hp: 20
+    e_Speed: 2.1
+    e_Exp: 1.5
 --- !u!1 &391890166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1020,6 @@ GameObject:
   - component: {fileID: 642490412}
   - component: {fileID: 642490413}
   - component: {fileID: 642490414}
-  - component: {fileID: 642490415}
   - component: {fileID: 642490416}
   m_Layer: 0
   m_Name: Player
@@ -1182,18 +1188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
   rigid: {fileID: 0}
---- !u!114 &642490415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642490409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29393113d4f91f245bdbee85e2fb3e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &642490416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,6 +1202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelUp: 0
   levelUpPanel: {fileID: 1598649603}
+  weaponList: []
 --- !u!1 &698586573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,6 +2671,15 @@ MonoBehaviour:
   randomItem_1: {fileID: 1908508000}
   randomItem_1_txt: {fileID: 73360904}
   randomItem_1_lv_txt: {fileID: 1911222882}
+  randomItem_2: {fileID: 97881300}
+  randomItem_2_txt: {fileID: 73880729}
+  randomItem_2_lv_txt: {fileID: 1882009478}
+  randomItem_3: {fileID: 772058460}
+  randomItem_3_txt: {fileID: 1924891227}
+  randomItem_3_lv_txt: {fileID: 622441036}
+  randomItem_4: {fileID: 1442296576}
+  randomItem_4_txt: {fileID: 730400672}
+  randomItem_4_lv_txt: {fileID: 1698568062}
 --- !u!1 &1698568060
 GameObject:
   m_ObjectHideFlags: 0

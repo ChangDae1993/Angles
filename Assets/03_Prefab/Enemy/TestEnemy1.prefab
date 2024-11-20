@@ -176,9 +176,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c2b049a2590fa429b1e901c82a00bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  Speed: 0
+  Hp: 0
+  maxHP: 0
+  sprites:
+  - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  - {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  - {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  - {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
+  - {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
   target: {fileID: 0}
-  islive: 1
+  islive: 0
   rigid: {fileID: 0}
   spriteRen: {fileID: 0}
 --- !u!114 &756547880953701826

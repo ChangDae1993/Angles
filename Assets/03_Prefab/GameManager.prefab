@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b3a704702518c4db5bfabae0dbbc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTime: 0
   EnemyPoolManager: {fileID: 2376074499863750966}
 --- !u!1 &3164943897614846775
 GameObject:
@@ -352,7 +353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 334062469866536161, guid: f3f16475a27a020498b12ba35b1ec130, type: 3}
-  - {fileID: 334062469866536161, guid: 8aae83490e328d9468c9dc7862f29b07, type: 3}
   spawnPoint: {fileID: 0}
 --- !u!1 &3424727842623493101
 GameObject:
@@ -2280,7 +2280,6 @@ GameObject:
   - component: {fileID: 647752286249011871}
   - component: {fileID: 4839352649336130935}
   - component: {fileID: 5646335190409331324}
-  - component: {fileID: 919975646504329253}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2345,18 +2344,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0e743a66ce5a3a40849326178d384ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &919975646504329253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7327084764261649601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f662b809952ced489ada213edbdc9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7754295183495877862

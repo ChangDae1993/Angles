@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 0f;
+    public float Speed = 0f;
+    public float Hp = 0f;
+    public float maxHP = 0f;
+    public Sprite[] sprites;
+
+
     public Rigidbody2D target;
 
-    public bool islive = false;
+    [SerializeField] private bool islive;
 
     public Rigidbody2D rigid;
     public SpriteRenderer spriteRen;
@@ -21,6 +26,17 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         target = GameManager.GM.player.GetComponent<Rigidbody2D>();
+        islive = true;
+
+        Hp = maxHP;
+    }
+
+    public void Init(SpawnData data)
+    {
+        spriteRen.sprite = sprites[data.e_Type];
+        Speed = data.e_Speed;
+        maxHP = data.e_Hp;
+        Hp = data.e_Hp;
     }
 
     // Start is called before the first frame update
@@ -34,7 +50,7 @@ public class Enemy : MonoBehaviour
             return;
 
         Vector2 targerDIr = target.position - rigid.position;
-        Vector2 nextVec = targerDIr.normalized * speed * Time.fixedDeltaTime;
+        Vector2 nextVec = targerDIr.normalized * Speed * Time.fixedDeltaTime;
 
         rigid.MovePosition(rigid.position + nextVec);
         rigid.linearVelocity = Vector2.zero;
@@ -43,8 +59,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     //void Update()
     //{
-        
+
     //}
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
 
     #region spriteFLip
 

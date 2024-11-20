@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class GlobalUserData : MonoBehaviour
 {
-    public static float playerExp;
-
+    //진행도
     public static int stage_Progress = 0;
 
     //레벨
     public static int p_Level = 0;
+
+    //경험치
+    public static float playerExp;
 
     //체력
     public static float p_HP;

@@ -17,12 +17,17 @@ public class Enemy : MonoBehaviour
         rigid = this.GetComponent<Rigidbody2D>();
         spriteRen = this.GetComponent<SpriteRenderer>();
     }
+
+    private void OnEnable()
+    {
+        target = GameManager.GM.player.GetComponent<Rigidbody2D>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
     private void FixedUpdate()
     {
         if (!islive)

@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GamePlayManager : MonoBehaviour
+public class GlobalEnemyData : MonoBehaviour
 {
-    public EnemyPoolManager EnemyPoolManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,8 +11,6 @@ public class GamePlayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
-
 }

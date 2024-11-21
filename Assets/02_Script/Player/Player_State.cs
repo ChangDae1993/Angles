@@ -5,26 +5,46 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using NUnit.Framework;
+using static UnityEngine.GraphicsBuffer;
 
 public class Player_State : MonoBehaviour
 {
     [Header("Stat")]
+    [Space(5f)]
+    [Header("HP")]
     //최대 체력
     public float MaxHP;
     //체력
     public float HP;
     //체력 재생
     public float HP_Gen;
+    //받는 피해량
+    public float Shield;
+
     //레벨
+    [Header("Level")]
     public int Level;
     //필요 경험치
     public float EXP;
-    //받는 피해량
-    public float Shield;
+    //현재 경험치
+    public float cur_EXP;
+    //경험치 UI
+    public Image exp_Img;
+
+    [Header("Level Up")]
+    public bool levelUp;
+    public Image levelUpPanel;
+
+    [Header("Dodge")]
     //회피율
     public float Dodge;
+
+    [Header("Speed")]
     //이동속도
     public  float MoveSpeed;
+
+    [Header("Attack")]
     //공격력
     public  float Attack;
     //치명타율
@@ -33,6 +53,8 @@ public class Player_State : MonoBehaviour
     public float CriticalDmg;
     //마법 쿨타임
     public float FireRate;
+
+    [Header("Plus Stat")]
     //축복 획득량
     public float ExpAdd;
     //생명 구슬 회복량
@@ -40,9 +62,6 @@ public class Player_State : MonoBehaviour
     //아이템 획득 반경
     public float ItemGainRange;
 
-    [Header("Level Up")]
-    public bool levelUp;
-    public Image levelUpPanel;
 
     [Space(10f)]
     [Header("Weapon List")]
@@ -63,8 +82,7 @@ public class Player_State : MonoBehaviour
         MaxHP += GlobalUserData.p_HP;
         HP += MaxHP;
         HP_Gen += GlobalUserData.p_HPGen;
-        Level += 0;
-        EXP = 0;
+        Level = 0;
         Shield += GlobalUserData.p_Shield;
         Dodge += GlobalUserData.p_Dodge;
         MoveSpeed += GlobalUserData.p_MoveSpeed;
@@ -85,14 +103,50 @@ public class Player_State : MonoBehaviour
     }
 
     // Update is called once per frame
-    //public void Update()
-    //{
-        
-    //}
+    public void Update()
+    {
+        if(cur_EXP >= EXP)
+        {
+            LevelUp();
+        }
+    }
+
+    public void NewGameLevelUp()
+    {
+        //레벨업 후 경험치 계산
+        Level++;
+        if (ResourceInCheck("basic"))
+        {
+            GameObject prefab = Resources.Load<GameObject>("basic");
+
+            // 2. 인스턴스화하여 씬에 배치
+            GameObject instance = Instantiate(prefab);
+            instance.name = prefab.name; // 오브젝트 이름 설정
+            instance.transform.SetParent(this.transform);
+            instance.transform.localScale = Vector3.one;
+
+
+            //현재 레벨 0 에서 1로 업데이트
+            //%%%%%%규칙 : Level_Chkr_Script 가지고 있어야 함%%%%%%
+            if (instance.gameObject.TryGetComponent(out Level_Chkr_Script lcs))
+            {
+                //레벨을 넘겨 받아야함
+                lcs.levelChck(GlobalItemData.itemData["basic"]);
+            }
+        }
+
+
+        //기본 무기 제공
+    }
 
 
     public void LevelUp()
     {
+        //레벨업 후 경험치 계산
+        Level++;
+        cur_EXP = 0f;
+        EXP = Level * EXP;
+
         levelUpPanel.gameObject.SetActive(true);
         //Debug.Log("level up");
         Time.timeScale = 0f;
@@ -106,6 +160,8 @@ public class Player_State : MonoBehaviour
             if (GlobalItemData.itemData[selectItem.text] < 5)
             {
                 GlobalItemData.itemData[selectItem.text]++;
+
+                //Debug.Log(selectItem.text + " : " + GlobalItemData.itemData[selectItem.text]);
             }
             else
             {
@@ -150,12 +206,17 @@ public class Player_State : MonoBehaviour
             }
         }
 
-        Debug.Log(selectItem.text + " : " + GlobalItemData.itemData[selectItem.text]);
+        if (levelUpPanel.TryGetComponent(out LevelUpPanel_Script lps))
+        {
+            if (lps.randomitemsLv.Count > 0 && lps.randomitems.Contains(selectItem.text))
+            {
+                int index = lps.randomitems.IndexOf(selectItem.text);
+                lps.randomitemsLv[index]++;
+                Debug.Log(lps.randomitemsLv[index]);
+            }
+        }
+
         //Debug.Log("select");
-
-
-
-
 
         levelUpPanel.gameObject.SetActive(false);
         Time.timeScale = 1f;

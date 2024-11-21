@@ -20,7 +20,7 @@ public class GlobalItemData : MonoBehaviour
 
     //근접 회전 번개
     public static string i_lightball = "lightball";
-    public static int i_lightball_Lv = 0;
+    public static int i_lightball_Lv;
 
     //불 발사
     public static string i_flame = "flame";
@@ -28,13 +28,20 @@ public class GlobalItemData : MonoBehaviour
 
     public void Awake()
     {
-        //itemData.Add(i_basic, i_basic_Lv);
+        if (!itemData.ContainsKey(i_basic))
+        {
+            itemData.Add(i_basic, i_basic_Lv);
+        }
+
         //itemData.Add(i_holyarea, i_holyarea_Lv);
+
         //itemData.Add(i_satellite, i_satellite_Lv);
-        if(!itemData.ContainsKey(i_lightball))
+
+        if (!itemData.ContainsKey(i_lightball))
         {
             itemData.Add(i_lightball, i_lightball_Lv);          
         }
+
         //itemData.Add(i_flame, i_flame_Lv);
     }
 }

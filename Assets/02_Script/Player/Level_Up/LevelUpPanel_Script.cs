@@ -22,8 +22,8 @@ public class LevelUpPanel_Script : MonoBehaviour
     public TextMeshProUGUI randomItem_4_txt;
     public TextMeshProUGUI randomItem_4_lv_txt;
 
-    List<string> randomitems = new List<string>(GlobalItemData.itemData.Keys);
-    List<int> randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
+    public List<string> randomitems = new List<string>(GlobalItemData.itemData.Keys);
+    public List<int> randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
 
 
     private void OnEnable()
@@ -36,7 +36,7 @@ public class LevelUpPanel_Script : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("Off");
+        //Debug.Log("Off");
     }
 
     int randomIt;
@@ -45,7 +45,8 @@ public class LevelUpPanel_Script : MonoBehaviour
     {
         randomIt = Random.Range(0, randomitems.Count);
         itemText.text =  randomitems[randomIt];
-        itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
+        itemLvText.text = "Lv :" + randomitemsLv[randomIt];
+        Debug.Log(itemText + ":" + randomitemsLv[randomIt]);
         //Debug.Log(randomitemsLv[randomIt]);
     }
 }

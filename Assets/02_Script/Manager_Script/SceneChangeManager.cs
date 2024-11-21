@@ -43,7 +43,7 @@ public class SceneChangeManager : MonoBehaviour
         {
             if (newGameStart)
             {
-                GameManager.GM.player.GetComponent<Player_State>().LevelUp();
+                GameManager.GM.player.GetComponent<Player_State>().NewGameLevelUp();
             }
         }
 

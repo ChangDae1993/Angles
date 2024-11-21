@@ -78,6 +78,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            EXPDrop();
             Dead();
             Hp = maxHP;
         }
@@ -85,8 +86,18 @@ public class Enemy : MonoBehaviour
 
     public void Dead()
     {
-
         islive = false;
         gameObject.SetActive(false);
+    }
+
+    public void EXPDrop()
+    {
+        if(GameManager.GM.player.TryGetComponent(out Player_State ps))
+        {
+            ps.cur_EXP += Exp;
+            //경험치 UI 표시
+            ps.exp_Img.fillAmount = (ps.cur_EXP / ps.Level) /100f;
+            //Debug.Log(ps.cur_EXP);
+        }
     }
 }

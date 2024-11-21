@@ -3,10 +3,6 @@ using UnityEngine;
 public class LightBall_Script : MonoBehaviour
 {
     public GameObject[] circles;
-    //public GameObject circles1;
-    //public GameObject circles2;
-    //public GameObject circles3;
-    //public GameObject circles4;
 
     private void Awake()
     {
@@ -14,11 +10,6 @@ public class LightBall_Script : MonoBehaviour
         {
             circles[i].gameObject.SetActive(false);
         }
-
-        //circles1.gameObject.SetActive(false);
-        //circles2.gameObject.SetActive(false);
-        //circles3.gameObject.SetActive(false);
-        //circles4.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,7 +27,7 @@ public class LightBall_Script : MonoBehaviour
             GameObject child = circles[i];
             child.gameObject.SetActive(true);
             child.transform.position
-                = transform.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0)) * 2;
+                = transform.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0)) * 1.5f;
         }
 
         //if (level == 1)

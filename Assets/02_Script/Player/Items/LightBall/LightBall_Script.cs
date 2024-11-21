@@ -2,17 +2,23 @@ using UnityEngine;
 
 public class LightBall_Script : MonoBehaviour
 {
-    public GameObject circles1;
-    public GameObject circles2;
-    public GameObject circles3;
-    public GameObject circles4;
+    public GameObject[] circles;
+    //public GameObject circles1;
+    //public GameObject circles2;
+    //public GameObject circles3;
+    //public GameObject circles4;
 
     private void Awake()
     {
-        circles1.gameObject.SetActive(false);
-        circles2.gameObject.SetActive(false);
-        circles3.gameObject.SetActive(false);
-        circles4.gameObject.SetActive(false);
+        for (int i = 0; i < circles.Length; i++)
+        {
+            circles[i].gameObject.SetActive(false);
+        }
+
+        //circles1.gameObject.SetActive(false);
+        //circles2.gameObject.SetActive(false);
+        //circles3.gameObject.SetActive(false);
+        //circles4.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,26 +29,37 @@ public class LightBall_Script : MonoBehaviour
 
     public void Upgrade(int level)
     {
-        if (level == 1)
+        for (int i = 0; i < level; i++)
         {
-            circles1.gameObject.SetActive(true);
+            float angle = i * (Mathf.PI * 2.0f) / level;
+
+            GameObject child = circles[i];
+            child.gameObject.SetActive(true);
+            child.transform.position
+                = transform.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0)) * 2;
         }
-        else if (level == 2)
-        {
-            circles2.gameObject.SetActive(true);
-        }
-        else if(level == 3)
-        {
-            circles3.gameObject.SetActive(true);
-        }
-        else if( level == 4)
-        {
-            circles4.gameObject.SetActive(true);
-        }
-        else
-        {
+
+        //if (level == 1)
+        //{
+        //    circles1.gameObject.SetActive(true);
+        //}
+        //else if (level == 2)
+        //{
+        //    circles2.gameObject.SetActive(true);
+        //}
+        //else if(level == 3)
+        //{
+        //    circles3.gameObject.SetActive(true);
+        //}
+        //else if( level == 4)
+        //{
+        //    circles4.gameObject.SetActive(true);
+        //}
+        //else
+        //{
+        //    Debug.Log(level + "checck");
+        //}
             Debug.Log(level + "checck");
-        }
 
     }
 }

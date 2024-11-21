@@ -138,7 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  pier: 0
 --- !u!1 &1873548635669337339
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  pier: 0
 --- !u!1 &3949421389011746639
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  pier: 0
 --- !u!1 &7275717227576305135
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  pier: 0
 --- !u!1 &7564805347324785847
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,10 +601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f2a8907a8766f49a6bf377a0f3a1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circles1: {fileID: 7275717227576305135}
-  circles2: {fileID: 368428452673891743}
-  circles3: {fileID: 3949421389011746639}
-  circles4: {fileID: 1873548635669337339}
+  circles:
+  - {fileID: 7275717227576305135}
+  - {fileID: 368428452673891743}
+  - {fileID: 3949421389011746639}
+  - {fileID: 1873548635669337339}
 --- !u!114 &2453369263913454648
 MonoBehaviour:
   m_ObjectHideFlags: 0

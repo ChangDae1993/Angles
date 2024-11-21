@@ -187,7 +187,7 @@ public class Player_State : MonoBehaviour
             else
             {
                 //만렙 dictionary에서 제외
-                Debug.Log($"{selectItem} is at max level.");
+                Debug.LogError($"{selectItem} is at max level.");
             }
         }
 
@@ -234,7 +234,7 @@ public class Player_State : MonoBehaviour
             {
                 int index = lps.randomitems.IndexOf(selectItem.text);
                 lps.randomitemsLv[index]++;
-                Debug.Log(lps.randomitemsLv[index]);
+                //Debug.Log(lps.randomitemsLv[index]);
             }
         }
 

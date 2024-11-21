@@ -45,8 +45,5 @@ public class GlobalItemData : MonoBehaviour
         }
 
         //itemData.Add(i_flame, i_flame_Lv);
-
-
-        Debug.Log(itemData.Count);
     }
 }

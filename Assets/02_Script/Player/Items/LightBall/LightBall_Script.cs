@@ -29,28 +29,6 @@ public class LightBall_Script : MonoBehaviour
             child.transform.position
                 = transform.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0)) * 1.5f;
         }
-
-        //if (level == 1)
-        //{
-        //    circles1.gameObject.SetActive(true);
-        //}
-        //else if (level == 2)
-        //{
-        //    circles2.gameObject.SetActive(true);
-        //}
-        //else if(level == 3)
-        //{
-        //    circles3.gameObject.SetActive(true);
-        //}
-        //else if( level == 4)
-        //{
-        //    circles4.gameObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    Debug.Log(level + "checck");
-        //}
-            Debug.Log(level + "checck");
-
+        Debug.Log(level + "checck");
     }
 }

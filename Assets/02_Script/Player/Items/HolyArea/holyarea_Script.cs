@@ -76,7 +76,7 @@ public class holyarea_Script : MonoBehaviour
             if(target.transform.gameObject.TryGetComponent(out Enemy enemy))
             {
                 enemy.TakeDamage(damage);
-                Debug.Log(targets.Length);
+                //Debug.Log(targets.Length);
             }
         }
     }

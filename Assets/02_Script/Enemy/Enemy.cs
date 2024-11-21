@@ -81,25 +81,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (!collision.CompareTag("Weapon"))
-    //        return;
-
-    //    Hp -= collision.GetComponent<Weapon>().damage;
-
-    //    if(Hp > 0)
-    //    {
-
-    //    }
-    //    else
-    //    {
-    //        EXPDrop();
-    //        Dead();
-    //        Hp = maxHP;
-    //    }
-    //}
-
     public void Dead()
     {
         islive = false;

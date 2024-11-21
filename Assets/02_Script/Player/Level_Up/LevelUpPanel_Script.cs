@@ -76,10 +76,8 @@ public class LevelUpPanel_Script : MonoBehaviour
 
     public void GEtRandomItem(TextMeshProUGUI itemText, TextMeshProUGUI itemLvText)
     {
-        Debug.Log(itemText + ":" + randomitemsLv[randomIt]);
         randomIt = Random.Range(0, randomitems.Count);
         itemText.text =  randomitems[randomIt];
         itemLvText.text = "Lv :" + randomitemsLv[randomIt];
-        //Debug.Log(randomitemsLv[randomIt]);
     }
 }

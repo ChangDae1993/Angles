@@ -47,6 +47,28 @@ public class Basic_Bullet_Controller : MonoBehaviour
         nearestTarget = GetNearest();
     }
 
+    int segments = 36;
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Vector3 center = this.transform.position;
+
+        // 원을 세그먼트로 나눠 점을 계산
+        float angleStep = 360f / segments;
+        Vector3 previousPoint = center + new Vector3(scanRange, 0, 0);
+
+        for (int i = 1; i <= segments; i++)
+        {
+            float angle = i * angleStep * Mathf.Deg2Rad; // 각도를 라디안으로 변환
+            Vector3 newPoint = center + new Vector3(Mathf.Cos(angle) * scanRange, Mathf.Sin(angle) * scanRange, 0);
+
+            // 이전 점과 현재 점을 연결
+            Gizmos.DrawLine(previousPoint, newPoint);
+            previousPoint = newPoint;
+        }
+    }
+
     public void Update()
     {
         fireTimer += Time.deltaTime;

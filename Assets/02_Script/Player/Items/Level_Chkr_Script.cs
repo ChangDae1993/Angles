@@ -9,12 +9,6 @@ public class Level_Chkr_Script : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
     public void levelChck(int level)
     {
         //개별 무기 동작 스크립트에서 Upgrade 함수는 무조건 있어야함.

@@ -12,7 +12,6 @@ public class Basic_Bullet_Script : MonoBehaviour
 
     private void OnEnable()
     {
-        Shoot();
         curPiearcing = piearcing;
         bulletOn = true;
     }
@@ -48,16 +47,6 @@ public class Basic_Bullet_Script : MonoBehaviour
         }
 
     }
-
-    public void Shoot()
-    {
-        //Debug.Log("Shoot");
-    }
-
-    //public void Fire()
-    //{
-
-    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

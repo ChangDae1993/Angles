@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float maxHP = 0f;
     public float Exp = 0f;
     public Sprite[] sprites;
+    public float damage;
 
 
     public Rigidbody2D target;
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
         maxHP = data.e_Hp;
         Hp = data.e_Hp;
         Exp = data.e_Exp;
+        damage = data.e_damage;
     }
 
     // Start is called before the first frame update

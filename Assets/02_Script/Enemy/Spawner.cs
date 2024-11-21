@@ -61,4 +61,6 @@ public class SpawnData
 
     //경험치
     public float e_Exp;
+
+    public float e_damage;
 }

@@ -66,6 +66,14 @@ public class Enemy : MonoBehaviour
 
     //}
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Ready give Damage");
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         Hp -= damage;

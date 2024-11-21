@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public UIManager UM;
     [Space(10f)]
     public GameObject player;
+    public Player_State player_state;
 
     public SceneChangeManager SCM;
     public GamePlayManager GPM;

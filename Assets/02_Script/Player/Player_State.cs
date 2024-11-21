@@ -74,6 +74,11 @@ public class Player_State : MonoBehaviour
         {
             GameManager.GM.player = this.gameObject;
         }
+
+        if (GameManager.GM.player_state == null)
+        {
+            GameManager.GM.player_state = this;
+        }
         Init();
     }
 
@@ -123,6 +128,7 @@ public class Player_State : MonoBehaviour
             GameObject instance = Instantiate(prefab);
             instance.name = prefab.name; // 오브젝트 이름 설정
             instance.transform.SetParent(this.transform);
+            instance.transform.localPosition = Vector3.zero;
             instance.transform.localScale = Vector3.one;
 
 

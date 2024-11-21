@@ -1291,7 +1291,7 @@ MonoBehaviour:
   Attack: 0
   CriticalRate: 0
   CriticalDmg: 0
-  FireRate: 0
+  FireRate: 1
   ExpAdd: 0
   HealAmount: 0
   ItemGainRange: 0

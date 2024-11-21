@@ -33,9 +33,11 @@ public class GlobalItemData : MonoBehaviour
             itemData.Add(i_basic, i_basic_Lv);
         }
 
-        //itemData.Add(i_holyarea, i_holyarea_Lv);
-
-        //itemData.Add(i_satellite, i_satellite_Lv);
+        
+        if (!itemData.ContainsKey(i_holyarea))
+        {
+            itemData.Add(i_holyarea, i_holyarea_Lv);
+        }
 
         if (!itemData.ContainsKey(i_lightball))
         {

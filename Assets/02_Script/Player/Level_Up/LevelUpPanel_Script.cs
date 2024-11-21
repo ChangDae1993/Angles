@@ -32,9 +32,6 @@ public class LevelUpPanel_Script : MonoBehaviour
     {
         randomitems = new List<string>(GlobalItemData.itemData.Keys);
         randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
-
-        //Debug.Log(randomitems.Count);
-        //Debug.Log(randomitemsLv.Count);
     }
 
     public void LevelUpPanelOFF(bool onoff)

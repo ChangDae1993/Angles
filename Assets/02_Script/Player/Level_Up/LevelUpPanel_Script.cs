@@ -43,6 +43,11 @@ public class LevelUpPanel_Script : MonoBehaviour
             randomItem_2.gameObject.SetActive(true);
             randomItem_3.gameObject.SetActive(true);
             randomItem_4.gameObject.SetActive(true);
+
+            GEtRandomItem(randomItem_1_txt, randomItem_1_lv_txt);
+            GEtRandomItem(randomItem_2_txt, randomItem_2_lv_txt);
+            GEtRandomItem(randomItem_3_txt, randomItem_3_lv_txt);
+            GEtRandomItem(randomItem_4_txt, randomItem_4_lv_txt);
         }
         else        //끄기
         {
@@ -58,18 +63,9 @@ public class LevelUpPanel_Script : MonoBehaviour
     {
         
     }
-
-    private void OnEnable()
-    {
-        GEtRandomItem(randomItem_1_txt, randomItem_1_lv_txt);
-        GEtRandomItem(randomItem_2_txt, randomItem_2_lv_txt);
-        GEtRandomItem(randomItem_3_txt, randomItem_3_lv_txt);
-        GEtRandomItem(randomItem_4_txt, randomItem_4_lv_txt);
-    }
-
     private void OnDisable()
     {
-        //Debug.Log("Off");
+        Debug.Log("Off");
     }
 
     int randomIt;
@@ -78,6 +74,7 @@ public class LevelUpPanel_Script : MonoBehaviour
     {
         randomIt = Random.Range(0, randomitems.Count);
         itemText.text =  randomitems[randomIt];
-        itemLvText.text = "Lv :" + randomitemsLv[randomIt];
+        itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
+        Debug.Log(itemLvText.text);
     }
 }

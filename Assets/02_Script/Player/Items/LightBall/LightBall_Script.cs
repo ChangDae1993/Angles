@@ -20,6 +20,9 @@ public class LightBall_Script : MonoBehaviour
 
     public void Upgrade(int level)
     {
+        if (level > 4)
+            return;
+
         for (int i = 0; i < level; i++)
         {
             float angle = i * (Mathf.PI * 2.0f) / level;

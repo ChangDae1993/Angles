@@ -10,6 +10,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Player_State : MonoBehaviour
 {
+#region inspector
     [Header("Stat")]
     [Space(5f)]
     [Header("HP")]
@@ -63,8 +64,11 @@ public class Player_State : MonoBehaviour
     //아이템 획득 반경
     public float ItemGainRange;
 
+#endregion
+
 
     [Space(10f)]
+
     [Header("Weapon List")]
     public List<GameObject> weaponList = new List<GameObject>();
 
@@ -204,6 +208,7 @@ public class Player_State : MonoBehaviour
                 // 2. 인스턴스화하여 씬에 배치
                 GameObject instance = Instantiate(prefab);
                 instance.name = prefab.name; // 오브젝트 이름 설정
+                //플레이어 하위로 둠
                 instance.transform.SetParent(this.transform);
                 instance.transform.localPosition = Vector3.zero;
                 instance.transform.localScale = Vector3.one;

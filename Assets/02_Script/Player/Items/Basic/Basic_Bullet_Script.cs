@@ -8,28 +8,32 @@ public class Basic_Bullet_Script : MonoBehaviour
     Rigidbody2D rigid;
 
     public int piearcing;
+    public int curPiearcing;
 
     private void OnEnable()
     {
         Shoot();
+        curPiearcing = piearcing;
         bulletOn = true;
     }
 
     private void OnDisable()
     {
-        Debug.Log("false");
+        //Debug.Log("false");
         bulletOn = false;
     }
 
     private void Awake()
     {
+        piearcing = 0;  //업그레이드 하면 바뀐다
+
         rigid = GetComponent<Rigidbody2D>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        
+
     }
 
     float lifeTime;
@@ -42,12 +46,12 @@ public class Basic_Bullet_Script : MonoBehaviour
             lifeTime = 0;
             this.gameObject.SetActive(false);
         }
-        //Debug.Log("Shoot");
+
     }
 
     public void Shoot()
     {
-
+        //Debug.Log("Shoot");
     }
 
     //public void Fire()
@@ -57,14 +61,19 @@ public class Basic_Bullet_Script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Enemy") || piearcing == -1)
+        if (!collision.gameObject.CompareTag("Enemy") || curPiearcing == -1)
             return;
-        piearcing--;
-
-        if(piearcing <= 0)
+        else if(collision.gameObject.TryGetComponent(out Enemy enemy))
         {
-            rigid.linearVelocity = Vector2.zero;
-            gameObject.SetActive(false);
+            curPiearcing--;
+            enemy.TakeDamage(damage);
+
+            //Debug.Log("Enemy");
+            if (curPiearcing <= 0)
+            {
+                rigid.linearVelocity = Vector2.zero;
+                gameObject.SetActive(false);
+            }
         }
     }
 }

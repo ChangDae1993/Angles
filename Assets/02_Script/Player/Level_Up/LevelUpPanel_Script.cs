@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class LevelUpPanel_Script : MonoBehaviour
 {
+    [Header("OnOffDirection")]
+    public Image BG;
+
     public Button randomItem_1;
     public TextMeshProUGUI randomItem_1_txt;
     public TextMeshProUGUI randomItem_1_lv_txt;
@@ -22,9 +25,42 @@ public class LevelUpPanel_Script : MonoBehaviour
     public TextMeshProUGUI randomItem_4_txt;
     public TextMeshProUGUI randomItem_4_lv_txt;
 
-    public List<string> randomitems = new List<string>(GlobalItemData.itemData.Keys);
-    public List<int> randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
+    public List<string> randomitems;
+    public List<int> randomitemsLv;
 
+    public void Awake()
+    {
+        randomitems = new List<string>(GlobalItemData.itemData.Keys);
+        randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
+
+        //Debug.Log(randomitems.Count);
+        //Debug.Log(randomitemsLv.Count);
+    }
+
+    public void LevelUpPanelOFF(bool onoff)
+    {
+        if(onoff)   //켜기
+        {
+            BG.enabled = true;
+            randomItem_1.gameObject.SetActive(true);
+            randomItem_2.gameObject.SetActive(true);
+            randomItem_3.gameObject.SetActive(true);
+            randomItem_4.gameObject.SetActive(true);
+        }
+        else        //끄기
+        {
+            BG.enabled = false;
+            randomItem_1.gameObject.SetActive(false);
+            randomItem_2.gameObject.SetActive(false);
+            randomItem_3.gameObject.SetActive(false);
+            randomItem_4.gameObject.SetActive(false);
+        }
+    }
+
+    private void Start()
+    {
+        
+    }
 
     private void OnEnable()
     {
@@ -43,10 +79,10 @@ public class LevelUpPanel_Script : MonoBehaviour
 
     public void GEtRandomItem(TextMeshProUGUI itemText, TextMeshProUGUI itemLvText)
     {
+        Debug.Log(itemText + ":" + randomitemsLv[randomIt]);
         randomIt = Random.Range(0, randomitems.Count);
         itemText.text =  randomitems[randomIt];
         itemLvText.text = "Lv :" + randomitemsLv[randomIt];
-        Debug.Log(itemText + ":" + randomitemsLv[randomIt]);
         //Debug.Log(randomitemsLv[randomIt]);
     }
 }

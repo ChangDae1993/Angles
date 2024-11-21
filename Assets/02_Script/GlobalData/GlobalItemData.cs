@@ -20,7 +20,7 @@ public class GlobalItemData : MonoBehaviour
 
     //근접 회전 번개
     public static string i_lightball = "lightball";
-    public static int i_lightball_Lv;
+    public static int i_lightball_Lv = 0;
 
     //불 발사
     public static string i_flame = "flame";
@@ -43,5 +43,8 @@ public class GlobalItemData : MonoBehaviour
         }
 
         //itemData.Add(i_flame, i_flame_Lv);
+
+
+        Debug.Log(itemData.Count);
     }
 }

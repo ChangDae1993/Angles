@@ -64,15 +64,12 @@ public class Enemy : MonoBehaviour
 
     //}
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage(float damage)
     {
-        if (!collision.CompareTag("Weapon"))
-            return;
+        Hp -= damage;
 
-        Hp -= collision.GetComponent<Weapon>().damage;
 
-        if(Hp > 0)
+        if (Hp > 0)
         {
 
         }
@@ -83,6 +80,25 @@ public class Enemy : MonoBehaviour
             Hp = maxHP;
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (!collision.CompareTag("Weapon"))
+    //        return;
+
+    //    Hp -= collision.GetComponent<Weapon>().damage;
+
+    //    if(Hp > 0)
+    //    {
+
+    //    }
+    //    else
+    //    {
+    //        EXPDrop();
+    //        Dead();
+    //        Hp = maxHP;
+    //    }
+    //}
 
     public void Dead()
     {

@@ -10,8 +10,12 @@ public class Basic_Bullet_Controller : MonoBehaviour
 
     public float fireTimer;
 
+    [Header("Bullet")]
     public int pre_bullet_num;
     public GameObject[] bullets;
+    public int bulletIndex = 0;
+    public float bulletSpeed;
+
 
     private void Awake()
     {
@@ -19,17 +23,16 @@ public class Basic_Bullet_Controller : MonoBehaviour
 
         for (int i = 0; i < pre_bullet_num; i++)
         {
-
             GameObject prefab = Resources.Load<GameObject>("Basic_Bullet");
             GameObject instance = Instantiate(prefab);
             instance.name = prefab.name; // 오브젝트 이름 설정
             instance.transform.SetParent(this.transform);
-
+            // 2. 인스턴스화하여 씬에 배치
             instance.transform.localScale = Vector3.one;
             bullets[i] = instance;
             instance.gameObject.SetActive(false);
         }
-        // 2. 인스턴스화하여 씬에 배치
+
     }
 
 
@@ -55,36 +58,34 @@ public class Basic_Bullet_Controller : MonoBehaviour
 
         }
     }
-
-    public int bulletIndex = 0;
     public void Fire()
     {
-        if (bulletIndex < bullets.Length) 
-        {
-            bullets[bulletIndex].gameObject.SetActive(true);
-            bullets[bulletIndex].transform.position = this.transform.position;
-            bulletIndex++;
-        }
-        else
-        {
-            bulletIndex = 0;
-        }
-
         if (nearestTarget == null)
             return;
         else
         {
-            Vector3 targetpos = nearestTarget.position;
-            Vector3 dir = targetpos - transform.position;
-            dir = dir.normalized;
+            if (bulletIndex < bullets.Length)
+            {
+                bullets[bulletIndex].gameObject.SetActive(true);
+                bullets[bulletIndex].transform.position = this.transform.position;
 
+                Vector3 targetpos = nearestTarget.position;
+                Vector2 dir = (targetpos - transform.position).normalized;
 
-            //Transform bullet = null;
+                bullets[bulletIndex].transform.rotation = Quaternion.LookRotation(dir);
 
-            //오브젝트 풀에서 가져오기
-            //bullet.position = transform.position;
-            //bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-            //bullet.GetComponent<Rigidbody2D>().linearVelocity = dir;
+                //Transform bullet = null;
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                //오브젝트 풀에서 가져오기
+                bullets[bulletIndex].transform.rotation = Quaternion.Euler(0, 0, angle);
+                bullets[bulletIndex].GetComponent<Rigidbody2D>().linearVelocity = dir * bulletSpeed;
+                bulletIndex++;
+            }
+            else
+            {
+                bulletIndex = 0;
+            }
+
         }
     }
 

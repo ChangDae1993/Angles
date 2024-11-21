@@ -35,6 +35,7 @@ public class Player_State : MonoBehaviour
     [Header("Level Up")]
     public bool levelUp;
     public Image levelUpPanel;
+    public LevelUpPanel_Script lps;
 
     [Header("Dodge")]
     //회피율
@@ -69,7 +70,7 @@ public class Player_State : MonoBehaviour
 
     public void Awake()
     {
-        Debug.Log("player Start");
+        //Debug.Log("player Start");
         if (GameManager.GM.player == null)
         {
             GameManager.GM.player = this.gameObject;
@@ -118,7 +119,7 @@ public class Player_State : MonoBehaviour
 
     public void NewGameLevelUp()
     {
-        //레벨업 후 경험치 계산
+        //기본 무기 제공
         Level++;
         if (ResourceInCheck("basic"))
         {
@@ -131,7 +132,7 @@ public class Player_State : MonoBehaviour
             instance.transform.localPosition = Vector3.zero;
             instance.transform.localScale = Vector3.one;
 
-
+            weaponList.Add(instance);
             //현재 레벨 0 에서 1로 업데이트
             //%%%%%%규칙 : Level_Chkr_Script 가지고 있어야 함%%%%%%
             if (instance.gameObject.TryGetComponent(out Level_Chkr_Script lcs))
@@ -139,10 +140,23 @@ public class Player_State : MonoBehaviour
                 //레벨을 넘겨 받아야함
                 lcs.levelChck(GlobalItemData.itemData["basic"]);
             }
+
+
+
+            if (levelUpPanel.TryGetComponent(out LevelUpPanel_Script lps))
+            {
+                if (lps.randomitemsLv.Count > 0 && lps.randomitems.Contains("basic"))
+                {
+                    int index = lps.randomitems.IndexOf("basic");
+                    lps.randomitemsLv[index]++;
+                    Debug.Log(lps.randomitemsLv[index]);
+                }
+            }
+
+            lps.LevelUpPanelOFF(false);
         }
 
 
-        //기본 무기 제공
     }
 
 
@@ -151,9 +165,10 @@ public class Player_State : MonoBehaviour
         //레벨업 후 경험치 계산
         Level++;
         cur_EXP = 0f;
+        EXP = 100f;
         EXP = Level * EXP;
 
-        levelUpPanel.gameObject.SetActive(true);
+        lps.LevelUpPanelOFF(true);
         //Debug.Log("level up");
         Time.timeScale = 0f;
         levelUp = true;
@@ -190,6 +205,7 @@ public class Player_State : MonoBehaviour
                 GameObject instance = Instantiate(prefab);
                 instance.name = prefab.name; // 오브젝트 이름 설정
                 instance.transform.SetParent(this.transform);
+                instance.transform.localPosition = Vector3.zero;
                 instance.transform.localScale = Vector3.one;
 
                 weaponList.Add(instance);
@@ -224,7 +240,7 @@ public class Player_State : MonoBehaviour
 
         //Debug.Log("select");
 
-        levelUpPanel.gameObject.SetActive(false);
+        lps.LevelUpPanelOFF(false);
         Time.timeScale = 1f;
         levelUp = false;
     }

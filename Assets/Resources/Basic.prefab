@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 468409365229619783}
   - component: {fileID: 7130850074785456938}
   m_Layer: 0
-  m_Name: Basic
+  m_Name: basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,9 +51,10 @@ MonoBehaviour:
     m_Bits: 64
   nearestTarget: {fileID: 0}
   fireTimer: 0
-  pre_bullet_num: 2
+  pre_bullet_num: 40
   bullets: []
   bulletIndex: 0
+  bulletSpeed: 8
 --- !u!114 &7130850074785456938
 MonoBehaviour:
   m_ObjectHideFlags: 0

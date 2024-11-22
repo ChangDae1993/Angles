@@ -39,6 +39,12 @@ public class LevelUpPanel_Script : MonoBehaviour
     {
         if(onoff)   //켜기
         {
+            if (randomitems.Count <= 0)
+            {
+                Debug.LogError("다 업글 했시요");
+                return;
+            }
+
             BG.enabled = true;
             randomItem_1.gameObject.SetActive(true);
             randomItem_2.gameObject.SetActive(true);
@@ -73,15 +79,43 @@ public class LevelUpPanel_Script : MonoBehaviour
 
     public void GEtRandomItem(TextMeshProUGUI itemText, TextMeshProUGUI itemLvText)
     {
-
         randomIt = Random.Range(0, randomitems.Count);
-        if (randomitemsLv[randomIt] >= 5)
+
+        if (randomitemsLv[randomIt] > 4)
         {
-            Debug.Log("Reset Need cus 만렙");
-            GEtRandomItem(itemText, itemLvText);
+            Debug.Log(randomitems[randomIt] + " : 만렙  data개수 ==" + GlobalItemData.itemData.Count);
+            GlobalItemData.TempRemoveFullLevel(randomitems[randomIt]);
+            randomitems.Remove(randomitems[randomIt]);
+            randomitemsLv.Remove(randomitemsLv[randomIt]);
         }
-        itemText.text =  randomitems[randomIt];
-        itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
+        else
+        {
+            itemText.text = randomitems[randomIt];
+            itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
+        }
         //Debug.Log(itemLvText.text);
     }
+
+    //public void ItemDiscript()
+    //{
+    //    if(GlobalItemData.itemData.ContainsKey(randomItem_1_txt.text))
+    //    {
+    //        ICollection<string> keys = GlobalItemData.itemData.Keys;
+    //        //Debug.Log(GlobalItemData.itemData[randomItem_1_txt.text]);  //이건 당연히 0이지
+    //        //Debug.Log(randomitems[randomIt]);
+
+    //        foreach (string key in keys)
+    //        {
+    //            if(key == randomItem_1_txt.text)
+    //            {
+    //                Debug.Log(key);
+    //                Debug.Log(GlobalItemData.itemData[key]);
+    //            }
+    //        }
+
+    //        //GlobalItemData.itemDescription[GlobalItemData.itemData[randomItem_1_txt.text]] = "d";
+    //        //Debug.Log(GlobalItemData.itemDescription[GlobalItemData.itemData[randomItem_1_txt.text]]);
+            
+    //    }
+    //}
 }

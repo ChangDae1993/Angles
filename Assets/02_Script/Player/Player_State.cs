@@ -182,17 +182,17 @@ public class Player_State : MonoBehaviour
     {
         if (GlobalItemData.itemData.ContainsKey(selectItem.text))
         {
-            if (GlobalItemData.itemData[selectItem.text] < 5)
+            if (GlobalItemData.itemData[selectItem.text] < 4)
             {
                 GlobalItemData.itemData[selectItem.text]++;
 
                 //Debug.Log(selectItem.text + " : " + GlobalItemData.itemData[selectItem.text]);
             }
-            else
-            {
-                //만렙 dictionary에서 제외
-                Debug.LogError($"{selectItem.text} is at max level.");
-            }
+            //else
+            //{
+            //    //만렙 dictionary에서 제외
+            //    Debug.LogError($"{selectItem.text} is at max level.");
+            //}
         }
 
         //선택 했는데 이미 가지고 있는지 확인 해야함

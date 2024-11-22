@@ -32,6 +32,6 @@ public class LightBall_Script : MonoBehaviour
             child.transform.position
                 = transform.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0)) * 1.5f;
         }
-        Debug.Log(level + "checck");
+        //Debug.Log(level + "checck");
     }
 }

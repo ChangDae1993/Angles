@@ -6,7 +6,7 @@ public class EnemyPoolManager : MonoBehaviour
 {
     public GameObject[] enemies;
 
-    List<GameObject>[] pools;
+    public List<GameObject>[] pools;
 
     public Transform spawnPoint = null;
 
@@ -34,7 +34,7 @@ public class EnemyPoolManager : MonoBehaviour
 
         foreach (GameObject item in pools[index])
         {
-            if(!item.activeSelf)
+            if(item != null && !item.activeSelf)
             {
                 select = item;
                 select.SetActive(true);

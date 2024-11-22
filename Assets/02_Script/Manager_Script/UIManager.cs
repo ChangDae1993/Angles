@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using NUnit.Framework;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,13 +27,13 @@ public class UIManager : MonoBehaviour
     public Image optionPanel;
     public bool gamePause;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (GameManager.GM.UM.stgCNt > (UIManager.stagecount)1)
         {
@@ -75,13 +78,30 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         windowOnOff = false;
     }
-    public SceneChangeManager scm;
-    //public void BackToMenuBtn()
-    //{
-    //    OptionShow(false);
-    //    GlobalItemData.itemData.Clear();
-    //    scm.ChangeScene(0);
-    //}
+
+    public void OptionGiveUpBtn()
+    {
+        List<string> keys = new List<string>(GlobalItemData.itemData.Keys);
+        Time.timeScale = 1f;
+       
+        for (int i = 0; i < keys.Count; i++)
+        {
+            string key = keys[i];
+            GlobalItemData.itemData[key] = 0;
+        }
+
+        GameManager.GM.GPM.gameTime = 0f;
+
+        stgCNt = stagecount.MainScene;
+
+        windowOnOff = false;
+        OptionShow(false);
+        SceneManager.LoadScene(0);
+        if (!BtnGroup.activeSelf)
+        {
+            BtnGroup.SetActive(true);
+        }
+    }
 
     public void ExitGame()
     {

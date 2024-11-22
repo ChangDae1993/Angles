@@ -153,7 +153,7 @@ public class Player_State : MonoBehaviour
                 {
                     int index = lps.randomitems.IndexOf("basic");
                     lps.randomitemsLv[index]++;
-                    Debug.Log(lps.randomitemsLv[index]);
+                    //Debug.Log(lps.randomitemsLv[index]);
                 }
             }
 

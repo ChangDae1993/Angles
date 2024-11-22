@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 2900434486643824771}
   - component: {fileID: 5504846713221932398}
   m_Layer: 5
-  m_Name: BacktoMenu_Btn
+  m_Name: GiveUp_Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,10 +733,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 915566392980706254}
-        m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 3
+      - m_Target: {fileID: 6393505429008628269}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OptionGiveUpBtn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back to Menu
+  m_text: Give Up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2342,11 +2342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bca1034848f9646af94942dfb9ae08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testMode: 0
   UM: {fileID: 6393505429008628269}
-  player: {fileID: 0}
   SCM: {fileID: 915566392980706254}
   GPM: {fileID: 4869509507850240371}
+  player: {fileID: 0}
+  player_state: {fileID: 0}
 --- !u!114 &4839352649336130935
 MonoBehaviour:
   m_ObjectHideFlags: 0

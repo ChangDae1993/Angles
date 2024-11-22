@@ -7,12 +7,14 @@ public class Play_Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerTxt;
 
-    public float timeRemaining = 15;
+    public float surviveTime;
+    public float timeRemaining;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeRemaining = timeRemaining * 60f;
+        surviveTime = surviveTime * 60f;
+        timeRemaining = surviveTime;
     }
 
     // Update is called once per frame

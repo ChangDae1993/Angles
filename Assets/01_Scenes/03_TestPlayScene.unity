@@ -794,6 +794,7 @@ MonoBehaviour:
     e_Exp: 15
     e_damage: 0
   stageLv_txt: {fileID: 1718898979}
+  play_timer: {fileID: 538023239}
 --- !u!1 &391890166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerTxt: {fileID: 538023237}
-  timeRemaining: 15
+  surviveTime: 15
+  timeRemaining: 0
 --- !u!1 &622441034
 GameObject:
   m_ObjectHideFlags: 0

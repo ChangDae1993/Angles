@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
 
     public TextMeshProUGUI stageLv_txt;
 
+    public Play_Timer play_timer;
     private EnemyPoolManager epm = null;
 
     private void Awake()
@@ -32,7 +33,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     public void Update()
     { 
-        stage_level = Mathf.Min(Mathf.FloorToInt(GameManager.GM.GPM.gameTime / 60f), spawnData.Length-1);
+        stage_level = Mathf.Min(Mathf.FloorToInt((play_timer.surviveTime-play_timer.timeRemaining) / 60f), spawnData.Length-1);
         stageLv_txt.text = "Current Stage : " +stage_level.ToString();
         spawnTimer += Time.deltaTime;
 

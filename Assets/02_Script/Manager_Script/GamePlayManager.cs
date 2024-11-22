@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class GamePlayManager : MonoBehaviour
 {
     public float gameTime;
-    private float maxGameTime = 2 * 10f;
+    public float maxGameTime;
 
     public EnemyPoolManager EnemyPoolManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

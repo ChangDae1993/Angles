@@ -21,6 +21,7 @@ public class Spawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.GM.GPM.maxGameTime = (spawnData.Length) * 10f;
         stage_level = 0;
     }
 

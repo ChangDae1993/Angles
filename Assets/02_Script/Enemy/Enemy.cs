@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         
     }
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         if (!islive)
             return;

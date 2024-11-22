@@ -763,23 +763,35 @@ MonoBehaviour:
   spawnTimer: 0
   stage_level: 0
   spawnData:
-  - e_SpawnTime: 2
+  - e_SpawnTime: 3
     e_Type: 0
     e_Hp: 1
     e_Speed: 1.5
     e_Exp: 10
     e_damage: 0
-  - e_SpawnTime: 1.5
+  - e_SpawnTime: 2
     e_Type: 1
     e_Hp: 2
-    e_Speed: 1.8
-    e_Exp: 10
+    e_Speed: 1.5
+    e_Exp: 8
     e_damage: 0
-  - e_SpawnTime: 0.5
+  - e_SpawnTime: 2
     e_Type: 2
     e_Hp: 5
-    e_Speed: 2.1
+    e_Speed: 1.8
+    e_Exp: 8
+    e_damage: 0
+  - e_SpawnTime: 1.5
+    e_Type: 3
+    e_Hp: 10
+    e_Speed: 2
     e_Exp: 10
+    e_damage: 0
+  - e_SpawnTime: 1.5
+    e_Type: 4
+    e_Hp: 15
+    e_Speed: 2
+    e_Exp: 15
     e_damage: 0
   epm: {fileID: 0}
 --- !u!1 &391890166

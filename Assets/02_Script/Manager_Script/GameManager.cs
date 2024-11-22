@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         {
             // 현재 인스턴스가 Singleton 인스턴스가 됨
             GM = this;
-            Debug.Log("start");
+            //Debug.Log("start");
             DontDestroyOnLoad(this.gameObject); // 이 객체는 Scene이 바뀌어도 파괴되지 않음
         }
         else if (GM != this)

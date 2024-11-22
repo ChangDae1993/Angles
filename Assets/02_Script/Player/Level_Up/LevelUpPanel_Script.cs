@@ -30,7 +30,7 @@ public class LevelUpPanel_Script : MonoBehaviour
 
     public void Awake()
     {
-        Debug.Log("Level Check");
+        //Debug.Log("Level Check");
         randomitems = new List<string>(GlobalItemData.itemData.Keys);
         randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
     }
@@ -79,7 +79,7 @@ public class LevelUpPanel_Script : MonoBehaviour
     }
     private void OnDisable()
     {
-        Debug.Log("Off");
+        //Debug.Log("Off");
     }
 
     [HideInInspector] public int randomIt;

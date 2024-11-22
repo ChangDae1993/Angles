@@ -34,7 +34,7 @@ public class GlobalItemData : MonoBehaviour
 
     public void Awake()
     {
-        Debug.Log("초기화");
+        //Debug.Log("초기화");
         if (!itemData.ContainsKey(i_basic))
         {
             itemData.Add(i_basic, i_basic_Lv);

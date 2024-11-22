@@ -115,7 +115,7 @@ public class Player_State : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Debug.Log(Time.timeScale);
+        //Debug.Log(Time.timeScale);
         if (cur_EXP >= EXP)
         {
             LevelUp();

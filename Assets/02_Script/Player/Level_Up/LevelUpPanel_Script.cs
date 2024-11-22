@@ -73,7 +73,13 @@ public class LevelUpPanel_Script : MonoBehaviour
 
     public void GEtRandomItem(TextMeshProUGUI itemText, TextMeshProUGUI itemLvText)
     {
+
         randomIt = Random.Range(0, randomitems.Count);
+        if (randomitemsLv[randomIt] >= 5)
+        {
+            Debug.Log("Reset Need cus 만렙");
+            GEtRandomItem(itemText, itemLvText);
+        }
         itemText.text =  randomitems[randomIt];
         itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
         //Debug.Log(itemLvText.text);

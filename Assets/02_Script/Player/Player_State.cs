@@ -109,7 +109,7 @@ public class Player_State : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-
+        max_levOn = false;
     }
 
     // Update is called once per frame
@@ -118,6 +118,15 @@ public class Player_State : MonoBehaviour
         if(cur_EXP >= EXP)
         {
             LevelUp();
+        }
+        
+        if(lps.randomitemsLv.Count <= 0)
+        {
+            max_levOn = true;
+        }
+        else
+        {
+            max_levOn = false;
         }
     }
 
@@ -163,36 +172,51 @@ public class Player_State : MonoBehaviour
 
     }
 
-
+    public bool max_levOn;
     public void LevelUp()
     {
-        //레벨업 후 경험치 계산
-        Level++;
-        cur_EXP = 0f;
-        EXP = 100f;
-        EXP = Level * EXP;
+        if(!max_levOn)
+        {
+            //레벨업 후 경험치 계산
+            Level++;
+            cur_EXP = 0f;
+            EXP = 100f;
+            EXP = Level * EXP;
 
-        lps.LevelUpPanelOFF(true);
-        //Debug.Log("level up");
-        Time.timeScale = 0f;
-        levelUp = true;
+            lps.LevelUpPanelOFF(true);
+            //Debug.Log("level up");
+            Time.timeScale = 0f;
+            levelUp = true;
+        }
+
+        //if (lps.randomitems.Count <= 0)
+        //{
+        //    Debug.LogError("다 업글 했시요");
+        //    return;
+        //}
+        //else
+        //{
+
+        //}
+
     }
 
     public void LevelUpSelect(TextMeshProUGUI selectItem)
     {
         if (GlobalItemData.itemData.ContainsKey(selectItem.text))
         {
-            if (GlobalItemData.itemData[selectItem.text] < 4)
+            if (GlobalItemData.itemData[selectItem.text] < 5)
             {
                 GlobalItemData.itemData[selectItem.text]++;
 
                 //Debug.Log(selectItem.text + " : " + GlobalItemData.itemData[selectItem.text]);
             }
-            //else
-            //{
-            //    //만렙 dictionary에서 제외
-            //    Debug.LogError($"{selectItem.text} is at max level.");
-            //}
+            else
+            {
+                //만렙 dictionary에서 제외
+
+                Debug.LogError($"{selectItem.text} is at max level.");
+            }
         }
 
         //선택 했는데 이미 가지고 있는지 확인 해야함
@@ -229,7 +253,10 @@ public class Player_State : MonoBehaviour
             // Level_Chkr_Script 컴포넌트가 있다면 레벨 업데이트
             if (existingObject.TryGetComponent(out Level_Chkr_Script lcs))
             {
-                lcs.levelChck(GlobalItemData.itemData[selectItem.text]);
+                if(GlobalItemData.itemData.Count > 0)
+                {
+                    lcs.levelChck(GlobalItemData.itemData[selectItem.text]);
+                }
             }
         }
 

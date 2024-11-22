@@ -115,7 +115,8 @@ public class Player_State : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if(cur_EXP >= EXP)
+        Debug.Log(Time.timeScale);
+        if (cur_EXP >= EXP)
         {
             LevelUp();
         }
@@ -175,17 +176,27 @@ public class Player_State : MonoBehaviour
     public bool max_levOn;
     public void LevelUp()
     {
-        if(!max_levOn)
+        //레벨업 후 경험치 계산
+        Level++;
+        cur_EXP = 0f;
+        EXP = 100f;
+        EXP = Level * EXP;
+        // 계속 진행
+
+        if (!max_levOn)
         {
-            //레벨업 후 경험치 계산
-            Level++;
-            cur_EXP = 0f;
-            EXP = 100f;
-            EXP = Level * EXP;
+            if (lps.randomitemsLv[lps.randomIt] > 4)
+            {
+                Debug.Log(lps.randomitems[lps.randomIt] + " : 만렙  data개수 ==" + GlobalItemData.itemData.Count);
+                GlobalItemData.TempRemoveFullLevel(lps.randomitems[lps.randomIt]);
+                lps.randomitems.Remove(lps.randomitems[lps.randomIt]);
+                lps.randomitemsLv.Remove(lps.randomitemsLv[lps.randomIt]);
+            }
+
 
             lps.LevelUpPanelOFF(true);
             //Debug.Log("level up");
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             levelUp = true;
         }
 
@@ -260,12 +271,12 @@ public class Player_State : MonoBehaviour
             }
         }
 
-        if (levelUpPanel.TryGetComponent(out LevelUpPanel_Script lps))
+        if (levelUpPanel.TryGetComponent(out LevelUpPanel_Script lups))
         {
-            if (lps.randomitemsLv.Count > 0 && lps.randomitems.Contains(selectItem.text))
+            if (lups.randomitemsLv.Count > 0 && lups.randomitems.Contains(selectItem.text))
             {
-                int index = lps.randomitems.IndexOf(selectItem.text);
-                lps.randomitemsLv[index]++;
+                int index = lups.randomitems.IndexOf(selectItem.text);
+                lups.randomitemsLv[index]++;
                 //Debug.Log(lps.randomitemsLv[index]);
             }
         }

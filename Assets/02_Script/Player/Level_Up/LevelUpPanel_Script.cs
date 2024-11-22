@@ -40,12 +40,15 @@ public class LevelUpPanel_Script : MonoBehaviour
         if (randomitems.Count <= 0)
         {
             Debug.LogError("다 업글 했시요");
+            Debug.Log(Time.timeScale);
+
             return;
         }
         else
         {
             if (onoff)   //켜기
             {
+                Time.timeScale = 0f;
                 BG.enabled = true;
                 randomItem_1.gameObject.SetActive(true);
                 randomItem_2.gameObject.SetActive(true);
@@ -59,6 +62,7 @@ public class LevelUpPanel_Script : MonoBehaviour
             }
             else        //끄기
             {
+                Time.timeScale = 1f;
                 BG.enabled = false;
                 randomItem_1.gameObject.SetActive(false);
                 randomItem_2.gameObject.SetActive(false);
@@ -78,7 +82,7 @@ public class LevelUpPanel_Script : MonoBehaviour
         Debug.Log("Off");
     }
 
-    int randomIt;
+    [HideInInspector] public int randomIt;
 
     public void GEtRandomItem(TextMeshProUGUI itemText, TextMeshProUGUI itemLvText)
     {
@@ -90,18 +94,22 @@ public class LevelUpPanel_Script : MonoBehaviour
         }
         else
         {
-            if (randomitemsLv[randomIt] > 4)
-            {
-                Debug.Log(randomitems[randomIt] + " : 만렙  data개수 ==" + GlobalItemData.itemData.Count);
-                GlobalItemData.TempRemoveFullLevel(randomitems[randomIt]);
-                randomitems.Remove(randomitems[randomIt]);
-                randomitemsLv.Remove(randomitemsLv[randomIt]);
-            }
-            else
-            {
-                itemText.text = randomitems[randomIt];
-                itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
-            }
+
+            itemText.text = randomitems[randomIt];
+            itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
+
+            //if (randomitemsLv[randomIt] > 4)
+            //{
+            //    Debug.Log(randomitems[randomIt] + " : 만렙  data개수 ==" + GlobalItemData.itemData.Count);
+            //    GlobalItemData.TempRemoveFullLevel(randomitems[randomIt]);
+            //    randomitems.Remove(randomitems[randomIt]);
+            //    randomitemsLv.Remove(randomitemsLv[randomIt]);
+            //}
+            //else
+            //{
+            //    itemText.text = randomitems[randomIt];
+            //    itemLvText.text = "Lv :" + randomitemsLv[randomIt].ToString();
+            //}
         }
 
         //Debug.Log(itemLvText.text);

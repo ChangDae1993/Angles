@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class holyarea_Script : MonoBehaviour
 {
@@ -11,12 +12,20 @@ public class holyarea_Script : MonoBehaviour
     public float damageRate;
     public float damageTimer;
 
+    private float rotateAngle;
+    public float rotateSpeed;
+
+    public Quaternion rotate;
+
     public void Upgrade(int level)
     {
         damageRate -= 0.3f;
-        this.transform.localScale = new Vector3(this.transform.localScale.x + 0.3f,
+        this.transform.localScale = new Vector3(
+            this.transform.localScale.x + 0.3f,
             this.transform.localScale.y + 0.3f,
             this.transform.localScale.z + 0.3f);
+
+        rotateSpeed *= 0.8f;
     }
 
     private void Awake()
@@ -27,12 +36,19 @@ public class holyarea_Script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // 초기 회전 값 저장
+        rotateAngle = this.transform.localRotation.eulerAngles.z;
     }
 
     // Update is called once per frame
     public void Update()
     {
+        // 회전 각도를 감소
+        rotateAngle -= Time.deltaTime * rotateSpeed;
+
+        // 새로운 회전 값을 Quaternion으로 적용
+        this.transform.rotation = Quaternion.Euler(0f, 0f, rotateAngle);
+
         damageTimer += Time.deltaTime;
         if (damageTimer >= damageRate)
         {

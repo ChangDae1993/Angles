@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb68485c73da5684d8561a84ca800ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanRange: 5
+  scanRange: 8.5
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -54,7 +54,7 @@ MonoBehaviour:
   bullets: []
   bulletIndex: 0
   bulletSpeed: 5
-  fireTimer: 4
+  fireTimer: 2.8
 --- !u!114 &7130850074785456938
 MonoBehaviour:
   m_ObjectHideFlags: 0

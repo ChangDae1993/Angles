@@ -110,6 +110,7 @@ MonoBehaviour:
   areaCal: 0.8
   damageRate: 2
   damageTimer: 0
+  rotate: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &6032322833006406489
 MonoBehaviour:
   m_ObjectHideFlags: 0

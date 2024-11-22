@@ -42,7 +42,9 @@ public class Basic_Bullet_Controller : MonoBehaviour
     {
         //총알 속도 빠르게
         bulletSpeed++;
-        fireTimer -= 0.5f;
+
+        //재장전 속도 빠르게
+        fireTimer -= 0.3f;
 
         for(int i = 0; i < bullets.Length; i++)
         {

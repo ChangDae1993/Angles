@@ -13,13 +13,15 @@ public class holyarea_Script : MonoBehaviour
 
     public void Upgrade(int level)
     {
-
+        damageRate -= 0.3f;
+        this.transform.localScale = new Vector3(this.transform.localScale.x + 0.3f,
+            this.transform.localScale.y + 0.3f,
+            this.transform.localScale.z + 0.3f);
     }
 
     private void Awake()
     {
         thisRange = GetComponent<CircleCollider2D>();
-        damageRate = 0.5f;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +31,7 @@ public class holyarea_Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         damageTimer += Time.deltaTime;
         if (damageTimer >= damageRate)

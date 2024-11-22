@@ -19,7 +19,7 @@ public class Basic_Bullet_Controller : MonoBehaviour
     public float fireTimer;
 
 
-    private void Awake()
+    public void Awake()
     {
         bullets = new GameObject[pre_bullet_num];
 

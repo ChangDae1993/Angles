@@ -768,16 +768,20 @@ MonoBehaviour:
     e_Hp: 1
     e_Speed: 1.5
     e_Exp: 10
+    e_damage: 0
   - e_SpawnTime: 1.5
     e_Type: 1
     e_Hp: 2
     e_Speed: 1.8
     e_Exp: 10
+    e_damage: 0
   - e_SpawnTime: 0.5
     e_Type: 2
     e_Hp: 5
     e_Speed: 2.1
     e_Exp: 10
+    e_damage: 0
+  epm: {fileID: 0}
 --- !u!1 &391890166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,7 +2680,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20, y: 20}
+  m_Size: {x: 40, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &1507169671
 GameObject:

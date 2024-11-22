@@ -108,7 +108,7 @@ MonoBehaviour:
   damageArea: 0
   thisRange: {fileID: 0}
   areaCal: 0.8
-  damageRate: 0
+  damageRate: 2
   damageTimer: 0
 --- !u!114 &6032322833006406489
 MonoBehaviour:

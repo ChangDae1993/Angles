@@ -191,7 +191,7 @@ public class Player_State : MonoBehaviour
             else
             {
                 //만렙 dictionary에서 제외
-                Debug.LogError($"{selectItem} is at max level.");
+                Debug.LogError($"{selectItem.text} is at max level.");
             }
         }
 

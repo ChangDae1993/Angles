@@ -17,6 +17,10 @@ public class holyarea_Script : MonoBehaviour
 
     public Quaternion rotate;
 
+    [Header("Spark Animation")]
+    public SpriteRenderer spriteRen;
+    public Animator sparkAnim;
+
     public void Upgrade(int level)
     {
         damageRate -= 0.3f;
@@ -49,12 +53,28 @@ public class holyarea_Script : MonoBehaviour
         // 새로운 회전 값을 Quaternion으로 적용
         this.transform.rotation = Quaternion.Euler(0f, 0f, rotateAngle);
 
+
+        // 색상 변화: damageTimer가 damageRate에 가까워질수록 노란색으로
+        float colorProgress = Mathf.Clamp01(damageTimer / damageRate);
+        spriteRen.color = Color.Lerp(Color.white, Color.yellow, colorProgress);
+
         damageTimer += Time.deltaTime;
         if (damageTimer >= damageRate)
         {
             damageTimer = 0f;
             GiveAreaDamage();
+
+            spriteRen.color = Color.white;
+            // 애니메이션 재생
+            if (sparkAnim != null)
+            {
+                //sparkAnim.Play("spark");
+                sparkAnim.SetTrigger("Play");
+            }
         }
+
+        //애니메이션 추가하기
+
     }
 
     private void FixedUpdate()

@@ -29,8 +29,10 @@ public class Basic_Bullet_Controller : MonoBehaviour
             GameObject instance = Instantiate(prefab);
             instance.name = prefab.name; // 오브젝트 이름 설정
             instance.transform.SetParent(this.transform);
+
+            //instance.transform.localScale = Vector3.one;
+
             // 2. 인스턴스화하여 씬에 배치
-            instance.transform.localScale = Vector3.one;
             bullets[i] = instance;
             instance.gameObject.SetActive(false);
         }

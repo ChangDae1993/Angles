@@ -53,7 +53,7 @@ MonoBehaviour:
   pre_bullet_num: 40
   bullets: []
   bulletIndex: 0
-  bulletSpeed: 5
+  bulletSpeed: 8
   fireTimer: 2.8
 --- !u!114 &7130850074785456938
 MonoBehaviour:

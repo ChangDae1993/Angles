@@ -168,10 +168,10 @@ TextureImporter:
       name: laser_Basic (2)_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 87
-        width: 410
-        height: 117
+        x: 20
+        y: 35
+        width: 460
+        height: 210
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

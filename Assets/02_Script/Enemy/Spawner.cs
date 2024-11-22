@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
         stageLv_txt.text = "Current Stage : " +stage_level.ToString();
         spawnTimer += Time.deltaTime;
 
-        if(spawnTimer > spawnData[stage_level].e_SpawnTime)
+        if(spawnTimer > Random.Range(0, spawnData[stage_level].e_SpawnTime))
         {
             spawnTimer = 0f;
             SpawnEnemy();

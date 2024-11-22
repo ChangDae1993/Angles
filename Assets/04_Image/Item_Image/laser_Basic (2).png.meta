@@ -168,12 +168,12 @@ TextureImporter:
       name: laser_Basic (2)_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 13
-        width: 475
-        height: 254
+        x: 42
+        y: 87
+        width: 410
+        height: 117
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,7 +190,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ff68b61fb65f4b745a9f4871b34a63e3
     internalID: 0
     vertices: []
     indices: 
@@ -199,7 +199,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      laser_Basic (2)_0: 8143214935359882913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -50,11 +50,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   nearestTarget: {fileID: 0}
-  fireTimer: 0
   pre_bullet_num: 40
   bullets: []
   bulletIndex: 0
-  bulletSpeed: 8
+  bulletSpeed: 5
+  fireTimer: 4
 --- !u!114 &7130850074785456938
 MonoBehaviour:
   m_ObjectHideFlags: 0

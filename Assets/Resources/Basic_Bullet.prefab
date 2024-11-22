@@ -132,6 +132,7 @@ MonoBehaviour:
   damage: 10
   bulletOn: 0
   piearcing: 0
+  curPiearcing: 0
 --- !u!61 &6041261618699125856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,15 +167,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04687929, y: -0.046739586}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.75, y: 2.54}
+    oldSize: {x: 4.1, y: 1.17}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.75, y: 2.54}
+  m_Size: {x: 3.3214178, y: 0.19650103}
   m_EdgeRadius: 0

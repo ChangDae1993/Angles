@@ -8,13 +8,15 @@ public class Basic_Bullet_Controller : MonoBehaviour
     public RaycastHit2D[] targets;
     public Transform nearestTarget;
 
-    public float fireTimer;
 
     [Header("Bullet")]
     public int pre_bullet_num;
     public GameObject[] bullets;
     public int bulletIndex = 0;
+
+    [Space(10f)]
     public float bulletSpeed;
+    public float fireTimer;
 
 
     private void Awake()
@@ -38,7 +40,17 @@ public class Basic_Bullet_Controller : MonoBehaviour
 
     public void Upgrade()
     {
+        //총알 속도 빠르게
+        bulletSpeed++;
+        fireTimer -= 0.5f;
 
+        for(int i = 0; i < bullets.Length; i++)
+        {
+            if (bullets[i].TryGetComponent(out Basic_Bullet_Script bbs))
+            {
+                bbs.damage += 3;
+            }
+        }
     }
 
     public void FixedUpdate()
@@ -68,14 +80,15 @@ public class Basic_Bullet_Controller : MonoBehaviour
             previousPoint = newPoint;
         }
     }
+    float timer = 0;
 
     public void Update()
     {
-        fireTimer += Time.deltaTime;
+        timer += Time.deltaTime;
 
-        if (fireTimer > GameManager.GM.player_state.FireRate)
+        if (timer > fireTimer)
         {
-            fireTimer = 0f;
+            timer = 0f;
             Fire();
 
         }

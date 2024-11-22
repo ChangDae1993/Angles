@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using NUnit.Framework;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+
 
     }
 

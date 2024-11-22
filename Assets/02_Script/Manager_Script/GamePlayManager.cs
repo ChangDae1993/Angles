@@ -25,7 +25,6 @@ public class GamePlayManager : MonoBehaviour
                 gameTime = maxGameTime;
             }
         }
-
     }
 
 

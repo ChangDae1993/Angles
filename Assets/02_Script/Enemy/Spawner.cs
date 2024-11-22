@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -10,7 +12,9 @@ public class Spawner : MonoBehaviour
 
     public SpawnData[] spawnData;
 
-    [SerializeField] EnemyPoolManager epm = null;
+    public TextMeshProUGUI stageLv_txt;
+
+    private EnemyPoolManager epm = null;
 
     private void Awake()
     {
@@ -26,10 +30,10 @@ public class Spawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        stage_level = Mathf.Min(Mathf.FloorToInt(GameManager.GM.GPM.gameTime / 10f), spawnData.Length-1);
-
+    public void Update()
+    { 
+        stage_level = Mathf.Min(Mathf.FloorToInt(GameManager.GM.GPM.gameTime / 60f), spawnData.Length-1);
+        stageLv_txt.text = "Current Stage : " +stage_level.ToString();
         spawnTimer += Time.deltaTime;
 
         if(spawnTimer > spawnData[stage_level].e_SpawnTime)

@@ -7,10 +7,12 @@ public class GamePlayManager : MonoBehaviour
     public float maxGameTime;
 
     public EnemyPoolManager EnemyPoolManager;
+
+    public bool GameEnd;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        GameEnd = false;
     }
 
     // Update is called once per frame
@@ -27,5 +29,12 @@ public class GamePlayManager : MonoBehaviour
         }
     }
 
+    public void EndGameOn()
+    {
+        GameEnd = true;
+        Time.timeScale = 0f;
+        Debug.Log("선별 되었습니다. 테스트를 종료합니다. 하고 메인 화면으로 다시 나가기 버튼 띄우기");
+
+    }
 
 }

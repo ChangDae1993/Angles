@@ -36,28 +36,29 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (GameManager.GM.UM.stgCNt > (UIManager.stagecount)1)
+        if(!GameManager.GM.GPM.GameEnd)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (GameManager.GM.UM.stgCNt > (UIManager.stagecount)1)
             {
-                if (!windowOnOff)
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    gamePause = true;
-                    OptionShow(true);
-                    Time.timeScale = 0f;
-                    windowOnOff = true;
-                }
-                else
-                {
-                    gamePause = false;
-                    OptionShow(false);
-                    Time.timeScale = 1f;
-                    windowOnOff = false;
+                    if (!windowOnOff)
+                    {
+                        gamePause = true;
+                        OptionShow(true);
+                        Time.timeScale = 0f;
+                        windowOnOff = true;
+                    }
+                    else
+                    {
+                        gamePause = false;
+                        OptionShow(false);
+                        Time.timeScale = 1f;
+                        windowOnOff = false;
+                    }
                 }
             }
         }
-
-
     }
 
 
@@ -92,7 +93,7 @@ public class UIManager : MonoBehaviour
             GlobalItemData.itemData[key] = 0;
         }
 
-        GameManager.GM.GPM.gameTime = 0f;
+        //GameManager.GM.GPM.gameTime = 0f;
 
         stgCNt = stagecount.MainScene;
 

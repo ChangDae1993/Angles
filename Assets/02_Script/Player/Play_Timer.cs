@@ -29,6 +29,7 @@ public class Play_Timer : MonoBehaviour
         {
             Debug.Log("타이머가 종료되었습니다!");
             timeRemaining = 0; // 남은 시간을 0으로 고정
+            GameManager.GM.GPM.EndGameOn();
             //isTimerRunning = false; // 타이머 중지
         }
     }

@@ -19,7 +19,6 @@ public class EnemyPoolManager : MonoBehaviour
             pools[i] = new List<GameObject> ();
         }
 
-        //Debug.Log(pools.Length);
     }
 
     //public void Start()

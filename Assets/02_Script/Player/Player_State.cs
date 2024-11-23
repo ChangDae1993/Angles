@@ -115,20 +115,24 @@ public class Player_State : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        //Debug.Log(Time.timeScale);
-        if (cur_EXP >= EXP)
+        if(!GameManager.GM.GPM.GameEnd)
         {
-            LevelUp();
+            //Debug.Log(Time.timeScale);
+            if (cur_EXP >= EXP)
+            {
+                LevelUp();
+            }
+
+            if (lps.randomitemsLv.Count <= 0)
+            {
+                max_levOn = true;
+            }
+            else
+            {
+                max_levOn = false;
+            }
         }
-        
-        if(lps.randomitemsLv.Count <= 0)
-        {
-            max_levOn = true;
-        }
-        else
-        {
-            max_levOn = false;
-        }
+
     }
 
     public void NewGameLevelUp()

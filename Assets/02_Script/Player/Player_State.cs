@@ -214,22 +214,6 @@ public class Player_State : MonoBehaviour
 
     public void LevelUpSelect(TextMeshProUGUI selectItem)
     {
-        if (GlobalItemData.itemData.ContainsKey(selectItem.text))
-        {
-            if (GlobalItemData.itemData[selectItem.text] < 5)
-            {
-                GlobalItemData.itemData[selectItem.text]++;
-
-                //Debug.Log(selectItem.text + " : " + GlobalItemData.itemData[selectItem.text]);
-            }
-            else
-            {
-                //만렙 dictionary에서 제외
-
-                Debug.LogError($"{selectItem.text} is at max level.");
-            }
-        }
-
         //선택 했는데 이미 가지고 있는지 확인 해야함
         // LINQ를 사용하여 검색
         GameObject existingObject = weaponList.FirstOrDefault(obj => obj.name == selectItem.text);
@@ -281,10 +265,29 @@ public class Player_State : MonoBehaviour
             }
         }
 
+
         //Debug.Log("select");
 
         lps.LevelUpPanelOFF(false);
         Time.timeScale = 1f;
+
+
+        if (GlobalItemData.itemData.ContainsKey(selectItem.text))
+        {
+            if (GlobalItemData.itemData[selectItem.text] < 5)
+            {
+                GlobalItemData.itemData[selectItem.text]++;
+
+                //Debug.Log(selectItem.text + " : " + GlobalItemData.itemData[selectItem.text]);
+            }
+            else
+            {
+                //만렙 dictionary에서 제외
+
+                Debug.LogError($"{selectItem.text} is at max level.");
+            }
+        }
+
         levelUp = false;
     }
 

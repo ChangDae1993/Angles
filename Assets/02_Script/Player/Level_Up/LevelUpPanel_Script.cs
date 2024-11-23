@@ -35,13 +35,16 @@ public class LevelUpPanel_Script : MonoBehaviour
         randomitemsLv = new List<int>(GlobalItemData.itemData.Values);
     }
 
+    public max_level_text_Script maxLevelTxt;
+
     public void LevelUpPanelOFF(bool onoff)
     {
         if (randomitems.Count <= 0)
         {
             Debug.LogError("다 업글 했시요");
-            Debug.Log(Time.timeScale);
+            //Debug.Log(Time.timeScale);
 
+            maxLevelTxt.gameObject.SetActive(true);
             return;
         }
         else

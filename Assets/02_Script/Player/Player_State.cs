@@ -181,6 +181,7 @@ public class Player_State : MonoBehaviour
         cur_EXP = 0f;
         EXP = 100f;
         EXP = Level * EXP;
+        exp_Img.fillAmount = 0f;
         // 계속 진행
 
         if (!max_levOn)

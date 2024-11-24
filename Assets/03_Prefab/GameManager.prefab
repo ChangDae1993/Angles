@@ -308,6 +308,7 @@ MonoBehaviour:
   gameTime: 0
   maxGameTime: 0
   EnemyPoolManager: {fileID: 2376074499863750966}
+  GameEnd: 0
 --- !u!1 &3164943897614846775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1465,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &424581281120601451
 MonoBehaviour:

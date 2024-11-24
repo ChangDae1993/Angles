@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        if(Time.timeScale != 1f)
+        {
+            Time.timeScale = 1f;
+        }
+
 
         //Debug.Log("Awake");
         if (GM == null)

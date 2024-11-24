@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,7 +63,7 @@ public class Player_State : MonoBehaviour
     //아이템 획득 반경
     public float ItemGainRange;
 
-#endregion
+    #endregion
 
 
     [Space(10f)]
@@ -304,8 +302,32 @@ public class Player_State : MonoBehaviour
         return resource != null;
     }
 
+    public Image DiePanel;
     public void Die()
     {
+        DiePanel.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+
         Debug.Log("Die");
+    }
+
+    public void DieBackMenuBtn()
+    {
+        if(GameManager.GM.player != null)
+        {
+            GameManager.GM.player = null;
+        }
+
+        if (GameManager.GM.player_state != null)
+        {
+            GameManager.GM.player_state = null;
+        }
+
+
+        if (!GameManager.GM.UM.BtnGroup.activeSelf)
+        {
+            GameManager.GM.UM.BtnGroup.SetActive(true);
+        }
+        GameManager.GM.SCM.ChangeScene(0);
     }
 }

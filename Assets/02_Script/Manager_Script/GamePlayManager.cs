@@ -43,6 +43,7 @@ public class GamePlayManager : MonoBehaviour
 
     public void ClearBackMenuBtn()
     {
+
         if (GameManager.GM.player != null)
         {
             GameManager.GM.player = null;
@@ -51,6 +52,11 @@ public class GamePlayManager : MonoBehaviour
         if (GameManager.GM.player_state != null)
         {
             GameManager.GM.player_state = null;
+        }
+        
+        if(ClearPanel.gameObject.activeSelf)
+        {
+            ClearPanel.gameObject.SetActive(false);
         }
 
 

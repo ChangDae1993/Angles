@@ -66,10 +66,39 @@ public class Enemy : MonoBehaviour
 
     //}
 
-    public void OnCollisionEnter(Collision collision)
+    //public void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.TryGetComponent(out Player_State ps))
+    //    {
+    //        ps.HP -= damage;
+
+    //        if (ps.HP <= 0)
+    //        {
+    //            ps.Die();
+    //        }
+    //        //경험치 UI 표시
+    //        ps.hp_img.fillAmount = (ps.HP / ps.MaxHP) / 100f;
+    //        Debug.Log("Ready give Damage");
+    //    }
+    //    //if (collision.gameObject.CompareTag("Player"))
+    //    //{
+
+
+    //    //}
+    //}
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.TryGetComponent(out Player_State ps))
         {
+            ps.HP -= damage;
+
+            if (ps.HP <= 0)
+            {
+                ps.Die();
+            }
+            //경험치 UI 표시
+            ps.hp_img.fillAmount = (ps.HP - damage) / 100f;
             Debug.Log("Ready give Damage");
         }
     }

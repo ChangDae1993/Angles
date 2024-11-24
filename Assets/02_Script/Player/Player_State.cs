@@ -5,8 +5,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using NUnit.Framework;
-using static UnityEngine.GraphicsBuffer;
 
 public class Player_State : MonoBehaviour
 {
@@ -18,6 +16,9 @@ public class Player_State : MonoBehaviour
     public float MaxHP;
     //체력
     public float HP;
+
+    public Image hp_img;
+
     //체력 재생
     public float HP_Gen;
     //받는 피해량
@@ -89,7 +90,8 @@ public class Player_State : MonoBehaviour
 
     public void Init()
     {
-        MaxHP += GlobalUserData.p_HP;
+        //MaxHP += GlobalUserData.p_HP;
+        MaxHP = 100;
         HP += MaxHP;
         HP_Gen += GlobalUserData.p_HPGen;
         Level = 0;
@@ -304,6 +306,6 @@ public class Player_State : MonoBehaviour
 
     public void Die()
     {
-
+        Debug.Log("Die");
     }
 }

@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerTxt: {fileID: 538023237}
-  surviveTime: 15
+  surviveTime: 2
   timeRemaining: 0
 --- !u!1 &622441034
 GameObject:

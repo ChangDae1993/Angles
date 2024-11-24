@@ -39,6 +39,12 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+
+        if(!GPM.ClearPanel.gameObject.activeSelf)
+        {
+            GPM.ClearPanel.gameObject.SetActive(false);
+        }
+
         // Manager 객체를 초기화
         InitializeManagers();
 

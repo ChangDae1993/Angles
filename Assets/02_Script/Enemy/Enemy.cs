@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float Exp = 0f;
     public Sprite[] sprites;
     public float damage;
+    public Color color;
 
 
     public Rigidbody2D target;
@@ -41,6 +42,8 @@ public class Enemy : MonoBehaviour
         Hp = data.e_Hp;
         Exp = data.e_Exp;
         damage = data.e_damage;
+        color = data.e_color;
+        this.transform.localScale = new Vector3(data.e_Scale, data.e_Scale, data.e_Scale);
     }
 
     // Start is called before the first frame update

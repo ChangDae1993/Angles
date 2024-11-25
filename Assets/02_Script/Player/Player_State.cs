@@ -308,7 +308,7 @@ public class Player_State : MonoBehaviour
         DiePanel.gameObject.SetActive(true);
         Time.timeScale = 0f;
 
-        Debug.Log("Die");
+        //Debug.Log("Die");
     }
 
     public void DieBackMenuBtn()

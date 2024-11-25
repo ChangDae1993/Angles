@@ -38,7 +38,7 @@ public class GamePlayManager : MonoBehaviour
         Time.timeScale = 0f;
 
         ClearPanel.gameObject.SetActive(true);
-        Debug.Log("선별 되었습니다. 테스트를 종료합니다. 하고 메인 화면으로 다시 나가기 버튼 띄우기");
+        //Debug.Log("선별 되었습니다. 테스트를 종료합니다. 하고 메인 화면으로 다시 나가기 버튼 띄우기");
 
     }
 

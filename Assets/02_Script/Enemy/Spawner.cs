@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
     {
         GameObject enemy = epm.Get(0);
 
-        enemy.transform.position = spawnPoints[Random.Range(1,spawnPoints.Length)].position;
+        enemy.transform.position = spawnPoints[Random.Range(0,spawnPoints.Length)].position;
         enemy.GetComponent<Enemy>().Init(spawnData[stage_level]);
     }
 }
@@ -56,6 +56,12 @@ public class Spawner : MonoBehaviour
 [System.Serializable]
 public class SpawnData
 {
+    //몬스터 색상
+    public Color e_color;
+
+    //몬스터 크기
+    public float e_Scale;
+
     //소환주기
     public  float e_SpawnTime;
 

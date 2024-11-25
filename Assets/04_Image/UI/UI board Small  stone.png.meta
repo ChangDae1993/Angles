@@ -199,7 +199,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI board Small  stone_0: 5578840540563973177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

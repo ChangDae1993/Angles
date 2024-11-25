@@ -73,7 +73,7 @@ public class RepositionScript : MonoBehaviour
                 case "Enemy":
                     if (col.enabled)
                     {
-                        this.transform.Translate(playerDir * 20 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                        this.transform.Translate(playerDir * 40 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
                     }
                     break;
                 case "Item":

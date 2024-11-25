@@ -90,7 +90,7 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < keys.Count; i++)
         {
             string key = keys[i];
-            GlobalItemData.itemData[key] = 0;
+            GlobalItemData.itemData[key] = 1;
         }
 
         //GameManager.GM.GPM.gameTime = 0f;

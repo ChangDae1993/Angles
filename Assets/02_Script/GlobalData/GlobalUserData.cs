@@ -26,7 +26,7 @@ public class GlobalUserData : MonoBehaviour
     public static float p_Dodge;
 
     //이동속도
-    public static float p_MoveSpeed = 3f;
+    public static float p_MoveSpeed = 2f;
 
     //공격력
     public static float p_Attack;

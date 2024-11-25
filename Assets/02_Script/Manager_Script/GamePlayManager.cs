@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class GamePlayManager : MonoBehaviour
 {
-    public float gameTime;
-    public float maxGameTime;
+    //public float gameTime;
+    //public float maxGameTime;
 
     public EnemyPoolManager EnemyPoolManager;
 
@@ -20,15 +20,15 @@ public class GamePlayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.GM.UM.stgCNt > (UIManager.stagecount)1)
-        {
-            gameTime += Time.deltaTime;
+        //if (GameManager.GM.UM.stgCNt > (UIManager.stagecount)1)
+        //{
+        //    gameTime += Time.deltaTime;
 
-            if (gameTime > maxGameTime)
-            {
-                gameTime = maxGameTime;
-            }
-        }
+        //    if (gameTime > maxGameTime)
+        //    {
+        //        gameTime = maxGameTime;
+        //    }
+        //}
     }
 
     public void EndGameOn()

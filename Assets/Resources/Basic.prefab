@@ -54,7 +54,7 @@ MonoBehaviour:
   bullets: []
   bulletIndex: 0
   bulletSpeed: 8
-  fireTimer: 2.8
+  fireTimer: 2
 --- !u!114 &7130850074785456938
 MonoBehaviour:
   m_ObjectHideFlags: 0

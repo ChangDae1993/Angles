@@ -866,6 +866,7 @@ MonoBehaviour:
   - {fileID: 5101896441027228832}
   - {fileID: 1451819517238077605}
   - {fileID: 5615548372524328088}
+  rotateSpeed: 200
 --- !u!114 &2453369263913454648
 MonoBehaviour:
   m_ObjectHideFlags: 0

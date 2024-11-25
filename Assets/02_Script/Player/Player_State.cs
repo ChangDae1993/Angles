@@ -313,7 +313,16 @@ public class Player_State : MonoBehaviour
 
     public void DieBackMenuBtn()
     {
-        if(GameManager.GM.player != null)
+
+        List<string> keys = new List<string>(GlobalItemData.itemData.Keys);
+
+        for (int i = 0; i < keys.Count; i++)
+        {
+            string key = keys[i];
+            GlobalItemData.itemData[key] = 1;
+        }
+
+        if (GameManager.GM.player != null)
         {
             GameManager.GM.player = null;
         }

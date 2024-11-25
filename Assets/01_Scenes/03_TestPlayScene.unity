@@ -1009,19 +1009,19 @@ MonoBehaviour:
     e_Type: 0
     e_Hp: 10
     e_Speed: 1
-    e_Exp: 7
+    e_Exp: 6
     e_damage: 10
   - e_SpawnTime: 2
     e_Type: 1
     e_Hp: 15
     e_Speed: 1.2
-    e_Exp: 9
+    e_Exp: 8
     e_damage: 12
   - e_SpawnTime: 2
     e_Type: 2
     e_Hp: 18
     e_Speed: 1.5
-    e_Exp: 10
+    e_Exp: 9
     e_damage: 10
   - e_SpawnTime: 1.5
     e_Type: 3
@@ -1033,7 +1033,7 @@ MonoBehaviour:
     e_Type: 4
     e_Hp: 22
     e_Speed: 2
-    e_Exp: 13
+    e_Exp: 12
     e_damage: 2
   stageLv_txt: {fileID: 1718898979}
   play_timer: {fileID: 538023239}

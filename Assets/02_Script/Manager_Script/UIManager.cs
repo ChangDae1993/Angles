@@ -30,7 +30,10 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        
+        if (GameManager.GM.GPM.ClearPanel.gameObject.activeSelf)
+        {
+            GameManager.GM.GPM.ClearPanel.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

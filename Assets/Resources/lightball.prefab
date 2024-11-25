@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d6b6923ea9d424db5d136bc1d1198e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 6
   ballAnim: {fileID: 617900265848158760}
 --- !u!95 &617900265848158760
 Animator:
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d6b6923ea9d424db5d136bc1d1198e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 6
   ballAnim: {fileID: 7580318629312610802}
 --- !u!95 &7580318629312610802
 Animator:
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d6b6923ea9d424db5d136bc1d1198e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 6
   ballAnim: {fileID: 7710252143981395306}
 --- !u!95 &7710252143981395306
 Animator:
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d6b6923ea9d424db5d136bc1d1198e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 6
   ballAnim: {fileID: 5175858067125168574}
 --- !u!95 &5175858067125168574
 Animator:
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d6b6923ea9d424db5d136bc1d1198e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 6
   ballAnim: {fileID: 7135625012440332941}
 --- !u!95 &7135625012440332941
 Animator:

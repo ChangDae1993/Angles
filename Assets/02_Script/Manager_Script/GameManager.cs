@@ -45,8 +45,7 @@ public class GameManager : MonoBehaviour
             GPM.ClearPanel.gameObject.SetActive(false);
         }
 
-        // Manager 객체를 초기화
-        InitializeManagers();
+        Init();
 
 //#if UNITY_EDITOR
 //        Cursor.visible = true;
@@ -56,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void InitializeManagers()
+    private void Init()
     {
         if (UM == null)
         {

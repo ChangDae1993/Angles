@@ -9,7 +9,7 @@ public class versionText : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        versionTxt.text = "ver." + Application.version.ToString();
+        versionTxt.text = "ver." + Application.version.ToString() + " Test_Build";
     }
 
     // Update is called once per frame

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Play_Timer : MonoBehaviour
 {
-    public TextMeshProUGUI timerTxt;
+    public Text timerTxt;
 
     public float surviveTime;
     public float timeRemaining;
@@ -23,10 +24,8 @@ public class Play_Timer : MonoBehaviour
         if (GameManager.GM.UM.stgCNt >= (UIManager.stagecount)2)
         {
 
-
             if (timeRemaining > 0)
             {
-
 
 #region cheat Code
 

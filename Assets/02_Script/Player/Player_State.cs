@@ -217,7 +217,7 @@ public class Player_State : MonoBehaviour
 
     }
 
-    public void LevelUpSelect(TextMeshProUGUI selectItem)
+    public void LevelUpSelect(Text selectItem)
     {
         //선택 했는데 이미 가지고 있는지 확인 해야함
         // LINQ를 사용하여 검색

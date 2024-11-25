@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float damage;
     public Color color;
 
+    //public TrailRenderer tR;
+
 
     public Rigidbody2D target;
 
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
     {
         rigid = this.GetComponent<Rigidbody2D>();
         spriteRen = this.GetComponent<SpriteRenderer>();
+        //tR.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -44,6 +47,7 @@ public class Enemy : MonoBehaviour
         damage = data.e_damage;
         color = data.e_color;
         this.transform.localScale = new Vector3(data.e_Scale, data.e_Scale, data.e_Scale);
+        //tR.gameObject.SetActive(true);
     }
 
     // Start is called before the first frame update
@@ -127,6 +131,7 @@ public class Enemy : MonoBehaviour
     {
         islive = false;
         gameObject.SetActive(false);
+        //tR.gameObject.SetActive(false);
     }
 
     public void EXPDrop()

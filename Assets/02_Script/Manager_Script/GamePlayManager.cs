@@ -67,7 +67,7 @@ public class GamePlayManager : MonoBehaviour
             GameManager.GM.UM.BtnGroup.SetActive(true);
         }
 
-
+        GameEnd = false; 
         GameManager.GM.SCM.ChangeScene(0);
     }
 

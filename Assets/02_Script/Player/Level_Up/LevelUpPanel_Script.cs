@@ -10,20 +10,23 @@ public class LevelUpPanel_Script : MonoBehaviour
     public Image BG;
 
     public Button randomItem_1;
-    public TextMeshProUGUI randomItem_1_txt;
-    public TextMeshProUGUI randomItem_1_lv_txt;
+    public Text randomItem_1_txt;
+    public Text randomItem_1_lv_txt;
+
     [Space(10f)]
     public Button randomItem_2;
-    public TextMeshProUGUI randomItem_2_txt;
-    public TextMeshProUGUI randomItem_2_lv_txt;
+    public Text randomItem_2_txt;
+    public Text randomItem_2_lv_txt;
+
     [Space(10f)]
     public Button randomItem_3;
-    public TextMeshProUGUI randomItem_3_txt;
-    public TextMeshProUGUI randomItem_3_lv_txt;
+    public Text randomItem_3_txt;
+    public Text randomItem_3_lv_txt;
+
     [Space(10f)]
     public Button randomItem_4;
-    public TextMeshProUGUI randomItem_4_txt;
-    public TextMeshProUGUI randomItem_4_lv_txt;
+    public Text randomItem_4_txt;
+    public Text randomItem_4_lv_txt;
 
     public List<string> randomitems;
     public List<int> randomitemsLv;
@@ -87,7 +90,7 @@ public class LevelUpPanel_Script : MonoBehaviour
 
     [HideInInspector] public int randomIt;
 
-    public void GEtRandomItem(TextMeshProUGUI itemText, TextMeshProUGUI itemLvText)
+    public void GEtRandomItem(Text itemText, Text itemLvText)
     {
         randomIt = Random.Range(0, randomitems.Count);
         if (randomitems.Count <= 0)

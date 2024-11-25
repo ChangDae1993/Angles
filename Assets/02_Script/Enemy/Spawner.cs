@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
 
     public SpawnData[] spawnData;
 
-    public TextMeshProUGUI stageLv_txt;
+    public Text stageLv_txt;
 
     public Play_Timer play_timer;
     private EnemyPoolManager epm = null;
